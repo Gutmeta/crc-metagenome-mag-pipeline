@@ -1,0 +1,39 @@
+project:
+  name: crc-metagenome-mag-pipeline
+  root: /path/to/crc-metagenome-mag-pipeline
+
+paths:
+  storage_root: /path/to/storage
+  scratch_root: /path/to/scratch
+  data_root_1: /path/to/data1
+  data_root_2: /path/to/data2
+  data_root_3: /path/to/data3
+  data_root_4: /path/to/data4
+  conda_root: /path/to/conda
+  database_root: /path/to/databases
+  checkm_data: /path/to/checkm_data
+  gtdbtk_data: /path/to/gtdbtk_data
+  ditasic_root: /path/to/ditasic
+
+datasets:
+  discovery_dataset: YachidaS_2019
+  validation_datasets:
+    - FengQ_2015
+    - YangJ_2020
+    - YuJ_2015
+    - ONCOBIOME_2025
+    - WirbelJ_2019
+    - YangYM_2021
+    - Qingdao_2024
+
+network:
+  core_mag_presence_cutoff: 0.75
+  fastspar_pvalue_cutoff: 0.001
+  groups:
+    - CRC
+    - control
+
+slurm:
+  partition: cpu
+  threads: 32
+  memory: 128G

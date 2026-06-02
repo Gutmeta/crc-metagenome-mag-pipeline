@@ -1,0 +1,30 @@
+name: crc-mag-pipeline
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+dependencies:
+  - python=3.10
+  - pandas
+  - numpy
+  - scipy
+  - scikit-learn
+  - xgboost
+  - matplotlib
+  - seaborn
+  - biopython
+  - networkx
+  - pyyaml
+  - r-base
+  - r-tidyverse
+  - r-wgcna
+  - fastspar
+  - fastani
+  - seqkit
+  - sra-tools
+  - kneaddata
+  - trimmomatic
+  - kallisto
+  - gtdbtk
+  - drep
+  - checkm-genome

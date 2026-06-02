@@ -1,0 +1,76 @@
+# Raw sequencing and alignment data
+*.fastq
+*.fastq.gz
+*.fq
+*.fq.gz
+*.sra
+*.bam
+*.sam
+*.cram
+
+# Genome and assembly outputs
+*.fa
+*.fna
+*.fasta
+*.faa
+*.ffn
+*.gff
+
+# Large tabular and generated outputs
+*.tsv
+*.csv
+*.npy
+*.npz
+*.pkl
+*.pickle
+*.pdf
+*.png
+*.jpg
+*.jpeg
+*.svg
+
+# Keep small publication templates
+!metadata/example_sample_metadata.tsv
+
+# Logs, jobs, and temporary output
+*.log
+*.out
+*.err
+slurm-*.out
+slurm_out/
+slurm_logs/
+*.bak.*
+*.tmp
+tmp/
+temp/
+cache/
+output/
+outputs/
+results/
+Results/
+jobs/
+*.jobs/
+*_jobs/
+
+# Tool-specific generated directories
+DiTASiC/
+classify_wf_out/
+dRep/
+dRep_hq_bins_dir/
+fastANI_results/
+co_abundance_network*/
+ML_results/
+C_genomes/
+gtdbtk_denovo/
+
+# Python/R local files
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.Rhistory
+.RData
+
+# OS/editor files
+.DS_Store
+.vscode/
+.idea/
