@@ -16,9 +16,12 @@ crc-metagenome-mag-pipeline/
 ├── metadata/
 │   └── example_sample_metadata.tsv
 ├── scripts/
-│   └── 01_... to 42_...
+│   ├── 01_... to 42_...
+│   └── plotting/
+│       └── portable plotting examples
 └── docs/
-    └── workflow_overview.md
+    ├── workflow_overview.md
+    └── plotting_examples.md
 ```
 
 ## What Is Included
@@ -28,6 +31,8 @@ crc-metagenome-mag-pipeline/
 - One representative `*_example` script for repeated dataset-specific analyses.
 - Example configuration and sample metadata templates.
 - A compact workflow overview for readers and reviewers.
+- Twelve privacy-safe plotting examples covering networks, heatmaps, associations,
+  model summaries, annotated phylogenies, ordination, and functional evidence.
 
 ## What Is Not Included
 
@@ -53,6 +58,14 @@ Several workflow steps also require external command-line tools and reference da
 2. Prepare a sample metadata table following `metadata/example_sample_metadata.tsv`.
 3. Run the numbered scripts in order for the analysis section you need. For `*_example` scripts, edit the dataset name and path variables before use.
 4. For Slurm-based scripts, update `#SBATCH` resources, partitions, and log directories before submission.
+
+Portable plotting examples and their input schemas are documented in
+[`docs/plotting_examples.md`](docs/plotting_examples.md). Synthetic demonstration
+inputs can be generated outside the repository with:
+
+```bash
+python scripts/plotting/generate_demo_inputs.py --output-dir /tmp/crc-mag-plotting-demo
+```
 
 Example:
 
