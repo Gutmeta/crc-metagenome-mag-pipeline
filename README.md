@@ -56,18 +56,28 @@ Several workflow steps also require external command-line tools and reference da
 
 1. Edit `config/example_config.yaml` for your local data, database, Conda, and tool paths.
 2. Prepare a sample metadata table following `metadata/example_sample_metadata.tsv`.
-3. Run the numbered scripts in order for the analysis section you need. For `*_example` scripts, edit the dataset name and path variables before use.
+3. Run the numbered scripts in order for the analysis section you need. For numbered `*_example` scripts, edit the dataset name and placeholder paths before use.
 4. For Slurm-based scripts, update `#SBATCH` resources, partitions, and log directories before submission.
 
-Portable plotting examples and their input schemas are documented in
-[`docs/plotting_examples.md`](docs/plotting_examples.md). Synthetic demonstration
-inputs can be generated outside the repository with:
+Scripts under `scripts/plotting/` use command-line arguments and do not require
+editing source paths. Their complete input schemas are documented in
+[`docs/plotting_examples.md`](docs/plotting_examples.md). To run a privacy-safe
+smoke test entirely outside the repository:
 
 ```bash
-python scripts/plotting/generate_demo_inputs.py --output-dir /tmp/crc-mag-plotting-demo
+python scripts/plotting/generate_demo_inputs.py \
+  --output-dir /tmp/crc-mag-plotting-demo/inputs
+mkdir -p /tmp/crc-mag-plotting-demo/figures
+
+python scripts/plotting/plot_association_heatmap_example.py \
+  --input /tmp/crc-mag-plotting-demo/inputs/association_heatmap.tsv \
+  --output-prefix /tmp/crc-mag-plotting-demo/figures/association_heatmap
 ```
 
-Example:
+The example writes editable PDF/SVG figures and a PNG preview. All generated
+records use deterministic fictitious identifiers such as `demo_001`.
+
+Numbered workflow example:
 
 ```bash
 bash scripts/02_pipe.sh <sample_list.txt> <input_fastq_root> <output_dir>
@@ -78,6 +88,18 @@ python scripts/08_extract_network_edges.py
 
 The scripts are presented as a transparent workflow record for publication. They are not guaranteed to be one-command portable without adapting paths, databases, cluster settings, and dataset metadata.
 
+## Reproducibility and Data Scope
+
+- `environment.yml` records the shared Python, R, and command-line dependencies.
+- The numbered scripts preserve representative manuscript analysis logic; repeated cohort-specific and parameter-trial scripts are intentionally collapsed to one documented example.
+- The plotting examples reproduce figure-generation patterns with synthetic inputs, not the manuscript's numerical results or participant-level analyses.
+- Raw data, private metadata, model predictions, generated figures, and machine-specific paths are not distributed in this repository.
+- For peer review or publication, report the repository URL together with a release tag or commit identifier so the reviewed code remains unambiguous.
+
+The repository is released under the [MIT License](LICENSE).
+
 ## Citation
 
-If you use or adapt this workflow, cite the associated manuscript when available.
+For peer review, cite the accompanying manuscript and include the repository URL
+and reviewed commit or release. Replace this note with the manuscript DOI or
+preprint citation when a persistent identifier becomes available.
