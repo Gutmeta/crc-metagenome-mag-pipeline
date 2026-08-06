@@ -166,8 +166,7 @@ def die(msg: str, code: int = 1):
     sys.exit(code)
 
 def classify_cluster(c1a: int, c1b: int) -> str:
-    # 你要求的“纯粹”规则：
-    # 只要同时存在 -> MIXED；否则单一 -> C1A / C1B
+    # Classification rule: mixed membership takes precedence over C1A or C1B alone.
     if c1a > 0 and c1b > 0:
         return "MIXED"
     if c1a > 0 and c1b == 0:
@@ -231,7 +230,7 @@ def main():
     winners = w.rename(columns={"cluster": "secondary_cluster", "genome": "winner_genome"})
     winners = winners[["secondary_cluster", "winner_genome"]].drop_duplicates()
 
-    # Winner label from original C1A/C1B (仅作参考，不参与分类)
+    # Original C1A/C1B label, retained for provenance but not used for classification.
     winners = winners.merge(
         lab[["genome", "orig_cluster"]].rename(columns={"genome": "winner_genome", "orig_cluster": "winner_orig_label"}),
         on="winner_genome", how="left"
@@ -294,7 +293,7 @@ def main():
 
         # only keep expected categories; unknown goes to MIXED? better to keep separate but user wants 3 folders only
         if cluster_type not in {"C1A", "C1B", "MIXED"}:
-            # 不确定类型（理论上不会出现），放入 MIXED 以免丢失
+            # Assign unexpected or missing types to MIXED to avoid dropping genomes.
             cluster_type = "MIXED"
 
         src = os.path.join(drep_rep_dir, winner)

@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 #SBATCH --job-name=18.丰度计算FengQ_2015
-#SBATCH --nodelist=cn204
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=8
 #SBATCH --mem=16GB
@@ -11,7 +10,7 @@
 set -Eeuo pipefail
 trap 'echo "[ERROR] 命令失败：$BASH_COMMAND (行号 $LINENO)" >&2' ERR
 
-REMOTE_HOST="192.168.2.206"
+REMOTE_HOST="source-host.example.org"
 REMOTE_USER_HOST="user@${REMOTE_HOST}"
 REMOTE_SAMPLE_LIST="/path/to/data1/FengQ_2015/SRR_Acc_List_CRC.txt"
 PIPELINE_SCRIPT="/path/to/scratch/pipeline/2.pipe.sh"
@@ -31,7 +30,7 @@ mkdir -p /path/to/scratch/tmp_slurm/FengQ_2015/slurm_logs "${LOCAL_ROOT}" "${LOC
 ln -sf "${PYTHON_BIN}" "${LOCAL_BIN}/python"
 export PATH="${LOCAL_BIN}:${DITASIC_BIN}:${DITASIC_HOME}:${PATH}"
 
-[ -x "${PIPELINE_SCRIPT}" ] || { echo "[ERROR] 204 管道脚本不存在或不可执行: ${PIPELINE_SCRIPT}" >&2; exit 11; }
+[ -x "${PIPELINE_SCRIPT}" ] || { echo "[ERROR] 管道脚本不存在或不可执行: ${PIPELINE_SCRIPT}" >&2; exit 11; }
 [ -x "${DITASIC_BIN}/kallisto" ] || { echo "[ERROR] kallisto 不存在: ${DITASIC_BIN}/kallisto" >&2; exit 12; }
 [ -f "${DITASIC_HOME}/ditasic_matrix.py" ] || { echo "[ERROR] ditasic_matrix.py 不存在: ${DITASIC_HOME}/ditasic_matrix.py" >&2; exit 13; }
 [ -x "${PYTHON_BIN}" ] || { echo "[ERROR] python 不存在: ${PYTHON_BIN}" >&2; exit 14; }

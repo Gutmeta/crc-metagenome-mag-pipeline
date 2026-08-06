@@ -37,7 +37,6 @@ for sample in samples:
 #SBATCH --job-name={sample}
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=32
-#SBATCH -w ctl206
 #SBATCH --mem=128GB
 #SBATCH --output={slurm_log_dir}/{sample}.out
 #SBATCH --error={slurm_log_dir}/{sample}.err
@@ -46,7 +45,7 @@ ulimit -n 4096
 
 export CHECKM_DATA_PATH="/path/to/databases/checkm_data"
 
-# === Conda 初始化（用你的绝对路径，避免依赖 ~/.bashrc）===
+# === Initialize Conda explicitly for non-interactive execution ===
 CONDA_BIN="/path/to/conda/bin/conda"
 # 让 conda 在非交互脚本中可用
 eval "$("$CONDA_BIN" shell.bash hook)"

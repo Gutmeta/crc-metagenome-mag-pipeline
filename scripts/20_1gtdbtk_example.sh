@@ -3,7 +3,6 @@
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=128
 #SBATCH --mem=64GB
-#SBATCH --nodelist=cn204
 #SBATCH --chdir=/path/to/scratch/tmp_slurm
 #SBATCH --output=/path/to/scratch/tmp_slurm/FengQ_2015/slurm_logs/gtdbtk_FengQ_2015.%j.out
 #SBATCH --error=/path/to/scratch/tmp_slurm/FengQ_2015/slurm_logs/gtdbtk_FengQ_2015.%j.err

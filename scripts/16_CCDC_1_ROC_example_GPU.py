@@ -82,7 +82,7 @@ for file_path in file_list:
     # 3) 过滤显著 taxa
     df = df[df["raw.pval"] <= 0.05]
 
-    # 4) 过滤后为空的样本跳过（关键：避免变成全0）
+    # 4) Skip samples with no retained taxa to avoid all-zero rows.
     if df.empty:
         skipped_empty_after_pval.append(sample_id)
         continue
@@ -107,7 +107,7 @@ reads_aligned = total_reads_per_sample.loc[abundance_matrix.index]
 
 abundance_rel = abundance_matrix.div(reads_aligned, axis=0)
 
-# === 防御性过滤：去掉全 NaN / 全 0 行（一般不会再出现，但建议保留） ===
+# Remove all-NaN and all-zero rows as a defensive validation step.
 abundance_rel = abundance_rel.dropna(axis=0, how="all")
 abundance_rel = abundance_rel.loc[(abundance_rel.fillna(0) != 0).any(axis=1)]
 
@@ -135,7 +135,7 @@ for train_idx, test_idx in loo.split(X):
     y_train_gpu = cp.asarray(y_train)
     X_test_gpu  = cp.asarray(X_test,  dtype=cp.float32)
 
-    # 修改：启用GPU训练并使用显式的 gpu_id
+    # Enable GPU training with an explicit device identifier.
     clf = XGBClassifier(
         eval_metric='logloss', 
         random_state=42, 

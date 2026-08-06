@@ -116,12 +116,13 @@ adapted to the target compute environment.
   interfaces.
 - The plotting examples demonstrate figure generation with synthetic inputs;
   manuscript values must be supplied from the corresponding analysis outputs.
-- For peer review or publication, report the repository URL together with a release tag or commit identifier so the reviewed code remains unambiguous.
+- Record the repository URL and exact release tag or commit identifier with each
+  analysis so that the software version remains traceable.
 
 The repository is released under the [MIT License](LICENSE).
 
 ## Citation
 
-For peer review, cite the accompanying manuscript and include the repository URL
-and reviewed commit or release. Replace this note with the manuscript DOI or
-preprint citation when a persistent identifier becomes available.
+To cite this software, use the repository title, URL, and exact release tag or
+commit identifier. For analyses reported in an associated manuscript or
+preprint, cite the corresponding article in addition to the software version.

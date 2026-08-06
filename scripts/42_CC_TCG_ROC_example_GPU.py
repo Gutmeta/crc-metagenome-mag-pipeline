@@ -37,8 +37,8 @@ USE_CUDA = cuda_available()
 
 def backend_asarray(a, dtype=None):
     # Keep host-side numpy arrays and let XGBoost move data to cuda:0.
-    # CuPy in this env is cuda12x and requires libnvrtc.so.12, while ctl206 has
-    # CUDA 13.1 system libraries. XGBoost's numpy input path works on the GPU.
+    # This avoids coupling the example to a system-specific CuPy/CUDA pairing.
+    # XGBoost's numpy input path still supports GPU execution.
     return np.asarray(a, dtype=dtype)
 
 

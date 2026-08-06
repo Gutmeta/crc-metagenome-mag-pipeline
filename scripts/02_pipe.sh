@@ -3,7 +3,7 @@
 ulimit -n 4096
 
 export CHECKM_DATA_PATH="/path/to/databases/checkm_data"
-# === Conda 初始化（用你的绝对路径，避免依赖 ~/.bashrc）===
+# === Initialize Conda explicitly for non-interactive execution ===
 CONDA_BIN="/path/to/conda/condabin/conda"
 source /path/to/conda/etc/profile.d/conda.sh
 

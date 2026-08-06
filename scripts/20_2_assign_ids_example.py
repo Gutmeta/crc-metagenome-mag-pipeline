@@ -86,7 +86,7 @@ def main():
         filename = os.path.basename(path)
         sample, suffix = parse_sample_suffix_from_text(filename)
         if not sample or not suffix:
-            # 跳过无法解析的文件（也可改为记录日志）
+            # Skip filenames that do not match the expected accession pattern.
             continue
         records.append({
             "Sample": sample,

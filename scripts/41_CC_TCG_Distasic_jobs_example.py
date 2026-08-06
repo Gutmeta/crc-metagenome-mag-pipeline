@@ -31,7 +31,6 @@ DITASIC_BIN = "/path/to/ditasic/ditasic"
 DITASIC_MAPPING_PY = "/path/to/ditasic/ditasic_mapping.py"
 KALLISTO_BIN_DIR = "/path/to/ditasic/bin"
 
-DEFAULT_NODE = "ctl206"
 DEFAULT_THREADS = 32
 DEFAULT_MEM = "64G"
 DEFAULT_KNEADDATA_MAX_MEMORY = "30000M"
@@ -52,7 +51,10 @@ def parse_args() -> argparse.Namespace:
             "Each PE grouped row is treated as one biological sample."
         )
     )
-    parser.add_argument("--node", default=DEFAULT_NODE, help="Slurm node constraint. Default: ctl206")
+    parser.add_argument(
+        "--node",
+        help="Optional Slurm node constraint; omitted by default.",
+    )
     parser.add_argument(
         "--threads",
         type=int,
@@ -191,7 +193,7 @@ def shell_run_list(runs: tuple[str, ...]) -> str:
 
 SAMPLE_SCRIPT_TEMPLATE = r"""#!/usr/bin/env bash
 #SBATCH --job-name=__SAMPLE__
-#SBATCH --nodelist=__NODE__
+__NODE_DIRECTIVE__
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=__THREADS__
 #SBATCH --mem=__MEM__
@@ -363,7 +365,7 @@ echo "[DONE] ${SAMPLE} completed: $(date '+%F %T')"
 
 ARRAY_SCRIPT_TEMPLATE = r"""#!/usr/bin/env bash
 #SBATCH --job-name=WirbelJ19_DiTASiC
-#SBATCH --nodelist=__NODE__
+__NODE_DIRECTIVE__
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=__THREADS__
 #SBATCH --mem=__MEM__
@@ -422,7 +424,7 @@ def sample_script_text(info: SampleInfo, args: argparse.Namespace) -> str:
             "SAMPLE": info.sample,
             "GROUP": info.group,
             "RUN_LIST": shell_run_list(info.runs),
-            "NODE": args.node,
+            "NODE_DIRECTIVE": f"#SBATCH --nodelist={args.node}" if args.node else "",
             "THREADS": args.threads,
             "MEM": args.mem,
             "SLURM_LOG_DIR": slurm_log_dir,
@@ -447,7 +449,7 @@ def array_script_text(missing_samples_file: Path, args: argparse.Namespace, last
     return replace_tokens(
         ARRAY_SCRIPT_TEMPLATE,
         {
-            "NODE": args.node,
+            "NODE_DIRECTIVE": f"#SBATCH --nodelist={args.node}" if args.node else "",
             "THREADS": args.threads,
             "MEM": args.mem,
             "LAST_INDEX": last_index,

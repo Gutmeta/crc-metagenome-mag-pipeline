@@ -3,7 +3,6 @@
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=64
 #SBATCH --mem=128GB
-#SBATCH --nodelist=ctl206
 #SBATCH --output=/path/to/crc-metagenome-mag-pipeline/fastANI_results/FengQ_2015/slurm_fastANI.out
 #SBATCH --error=/path/to/crc-metagenome-mag-pipeline/fastANI_results/FengQ_2015/slurm_fastANI.err
 

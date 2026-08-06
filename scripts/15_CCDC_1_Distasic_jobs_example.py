@@ -7,8 +7,8 @@ output_dir       = '/path/to/storage/data3/CRC/CCDC1/FengQ_2015'
 input_path       = '/path/to/storage/data2/FengQ_2015'
 slurm_log_dir    = '/path/to/storage/data3/CRC/CCDC1/FengQ_2015/slurm_out'
 
-# kneaddata 依赖（按需修改）
-CONDA_BIN        = '/path/to/conda/condabin/conda'   # 你的 conda 绝对路径
+# KneadData dependencies.
+CONDA_BIN        = '/path/to/conda/condabin/conda'   # Explicit Conda executable.
 CONDA_ENV        = 'kallisto046'
 KNEADDATA_DB="/path/to/storage/tools/bowtie2-2.5.4-linux-x86_64/hg38_index/hg38_index"
 TRIMMOMATIC_DIR="/path/to/conda/share/trimmomatic-0.39-2/"
@@ -40,7 +40,7 @@ export CHECKM_DATA_PATH="/path/to/checkm_data"
 echo "=== Processing sample: {sample} ==="
 threads="${{SLURM_CPUS_PER_TASK:-16}}"
 
-# === Conda 初始化（按你的方式，不依赖 ~/.bashrc）===
+# === Initialize Conda explicitly for non-interactive execution ===
 set +u
 CONDA_BIN="{CONDA_BIN}"
 eval "$("$CONDA_BIN" shell.bash hook)"
@@ -50,25 +50,25 @@ set -u
 input_root="{input_path}"
 
 input_1=$(find "$input_root" -maxdepth 2 -type f \
-  \( -name "{sample}*_RmHost.1.fq.gz"  -o -name "{sample}*_RmHost.1.fastq.gz" \
+  \\( -name "{sample}*_RmHost.1.fq.gz"  -o -name "{sample}*_RmHost.1.fastq.gz" \
      -name "{sample}*_RmHost.1.fq"     -o -name "{sample}*_RmHost.1.fastq"   \
      -o -name "{sample}*R1*.fastq.gz"  -o -name "{sample}*R1*.fq.gz"         \
      -o -name "{sample}*R1*.fastq"     -o -name "{sample}*R1*.fq"            \
      -o -name "{sample}*_1.fastq.gz"   -o -name "{sample}*_1.fq.gz"          \
      -o -name "{sample}*_1.fastq"      -o -name "{sample}*_1.fq"             \
      -o -name "{sample}*.1.fastq.gz"   -o -name "{sample}*.1.fq.gz"          \
-     -o -name "{sample}*.1.fastq"      -o -name "{sample}*.1.fq" \) \
+     -o -name "{sample}*.1.fastq"      -o -name "{sample}*.1.fq" \\) \
   | head -n 1 || true)
 
 input_2=$(find "$input_root" -maxdepth 2 -type f \
-  \( -name "{sample}*_RmHost.2.fq.gz"  -o -name "{sample}*_RmHost.2.fastq.gz" \
+  \\( -name "{sample}*_RmHost.2.fq.gz"  -o -name "{sample}*_RmHost.2.fastq.gz" \
      -o -name "{sample}*_RmHost.2.fq"  -o -name "{sample}*_RmHost.2.fastq"   \
      -o -name "{sample}*R2*.fastq.gz"  -o -name "{sample}*R2*.fq.gz"         \
      -o -name "{sample}*R2*.fastq"     -o -name "{sample}*R2*.fq"            \
      -o -name "{sample}*_2.fastq.gz"   -o -name "{sample}*_2.fq.gz"          \
      -o -name "{sample}*_2.fastq"      -o -name "{sample}*_2.fq"             \
      -o -name "{sample}*.2.fastq.gz"   -o -name "{sample}*.2.fq.gz"          \
-     -o -name "{sample}*.2.fastq"      -o -name "{sample}*.2.fq" \) \
+     -o -name "{sample}*.2.fastq"      -o -name "{sample}*.2.fq" \\) \
   | head -n 1 || true)
 
 if [[ -z "$input_1" || -z "$input_2" ]]; then

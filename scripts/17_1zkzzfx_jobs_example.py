@@ -16,7 +16,7 @@ for sample in samples:
 #SBATCH --job-name={sample}       # 作业名
 #SBATCH --ntasks=1                  # 使用一个任务
 #SBATCH --cpus-per-task=64           # 每个任务使用 64 个 CPU 核心
-#SBATCH --mem=32GB                   # 请求 8GB 内存
+#SBATCH --mem=32GB                   # 请求 32GB 内存
 #SBATCH --output=/path/to/data1/FengQ_2015/slurm_logs/{sample}.17.out
 #SBATCH --error=/path/to/data1/FengQ_2015/slurm_logs/{sample}.17.err
 

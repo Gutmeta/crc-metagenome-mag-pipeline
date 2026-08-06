@@ -30,7 +30,8 @@ documented configuration fields and script parameters.
 
 ## Execution Notes
 
-- Replace `/path/to/...` placeholders with local paths or convert the relevant scripts to read from `config/example_config.yaml`.
+- Configure each `/path/to/...` placeholder with the corresponding local path,
+  either directly or through `config/example_config.yaml` where supported.
 - Files ending in `_example` expose reusable interfaces for analyses that require dataset-specific inputs or cohort definitions.
 - Update Slurm settings before running on a different cluster.
 - Keep raw data and generated outputs outside the Git repository.

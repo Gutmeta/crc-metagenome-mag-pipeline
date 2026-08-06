@@ -3,8 +3,8 @@
 # 资源请求部分 (Slurm 指令)
 #SBATCH --job-name=丰度计算       # 作业名
 #SBATCH --ntasks=1                  # 使用一个任务
-#SBATCH --cpus-per-task=32           # 每个任务使用 64 个 CPU 核心
-#SBATCH --mem=64GB                   # 请求 128GB 内存
+#SBATCH --cpus-per-task=32           # 每个任务使用 32 个 CPU 核心
+#SBATCH --mem=64GB                   # 请求 64GB 内存
 #SBATCH --output=/path/to/data2/CRC/CCDC2/slurm_out/33.pipe.out
 #SBATCH --error=/path/to/data2/CRC/CCDC2/slurm_out/33.pipe.err
 

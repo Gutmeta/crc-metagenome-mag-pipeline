@@ -29,7 +29,7 @@ def infer_weight_from_prediction_csv(ds_name: str) -> int:
             return int(pd.read_csv(pred_path).shape[0])
         except Exception:
             pass
-    # 找不到就退化为 1（也能跑）
+    # Fall back to a unit weight when no fold count is available.
     return 1
 
 files = sorted(glob(os.path.join(ML_DIR, PATTERN)))
@@ -49,7 +49,7 @@ all_features = sorted(set().union(*[set(s.index) for s in imp.values()]))
 imp_df = pd.DataFrame({ds: s.reindex(all_features, fill_value=0.0) for ds, s in imp.items()})
 w = pd.Series(weights, dtype=float)
 
-# 1) 论文式：across all models 的加权平均重要性（权重≈fold数≈样本数）
+# 1) Weighted mean importance across models (weight approximates folds/samples).
 global_mean_imp = (imp_df * w).sum(axis=1) / w.sum()
 
 # 2) 平均名次（更鲁棒）：每个dataset内部按 importance 排名，然后按权重平均
@@ -66,7 +66,7 @@ out = pd.DataFrame({
 out["GlobalRank_ByMeanImportance"] = out["GlobalMeanImportance_weighted"].rank(ascending=False, method="min").astype(int)
 out["GlobalRank_ByAvgRank"] = out["GlobalAvgRank_weighted"].rank(ascending=True, method="min").astype(int)
 
-# 可选：把每个dataset的 mean importance 也拼进去便于检查
+# Include per-dataset mean importance columns for traceability.
 out = out.join(imp_df.add_prefix("MeanImp__"), how="left")
 
 # 排序：优先用平均名次（更鲁棒），再用平均重要性

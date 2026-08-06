@@ -1,4 +1,4 @@
 Sample	Group	Dataset	Read1	Read2
-SRR000001	CRC	YachidaS_2019	/path/to/reads/SRR000001_1.fastq.gz	/path/to/reads/SRR000001_2.fastq.gz
-SRR000002	control	YachidaS_2019	/path/to/reads/SRR000002_1.fastq.gz	/path/to/reads/SRR000002_2.fastq.gz
-SRR000003	CRC	FengQ_2015	/path/to/reads/SRR000003_1.fastq.gz	/path/to/reads/SRR000003_2.fastq.gz
+demo_001	CRC	cohort_A	/path/to/reads/demo_001_1.fastq.gz	/path/to/reads/demo_001_2.fastq.gz
+demo_002	control	cohort_A	/path/to/reads/demo_002_1.fastq.gz	/path/to/reads/demo_002_2.fastq.gz
+demo_003	CRC	cohort_B	/path/to/reads/demo_003_1.fastq.gz	/path/to/reads/demo_003_2.fastq.gz
