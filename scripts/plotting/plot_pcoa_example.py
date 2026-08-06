@@ -17,6 +17,7 @@ from plotting_common import (
     categorical_colors,
     configure_style,
     finite_numeric,
+    nonempty_text,
     parse_formats,
     read_table,
     require_columns,
@@ -55,6 +56,7 @@ def main() -> None:
     if distance_frame.shape[1] < 3:
         raise ValueError("Distance matrix must include sample_id and at least two sample columns")
     identifier_column = distance_frame.columns[0]
+    nonempty_text(distance_frame, [identifier_column], "distance matrix")
     sample_ids = distance_frame[identifier_column].astype(str).tolist()
     if len(sample_ids) != len(set(sample_ids)):
         raise ValueError("Distance matrix contains duplicate row identifiers")
@@ -74,7 +76,7 @@ def main() -> None:
 
     metadata = read_table(args.metadata)
     require_columns(metadata, ["sample_id", "group"], "ordination metadata")
-    metadata["sample_id"] = metadata["sample_id"].astype(str)
+    nonempty_text(metadata, ["sample_id", "group"], "ordination metadata")
     if metadata["sample_id"].duplicated().any():
         raise ValueError("ordination metadata contains duplicate sample_id values")
     metadata = metadata.set_index("sample_id")

@@ -74,6 +74,17 @@ def finite_numeric(frame: pd.DataFrame, columns: Iterable[str], table_name: str)
         raise ValueError(f"{table_name} contains missing or non-finite numeric values")
 
 
+def nonempty_text(frame: pd.DataFrame, columns: Iterable[str], table_name: str) -> None:
+    """Normalize selected text columns and reject missing or blank values."""
+    columns = list(columns)
+    for column in columns:
+        if frame[column].isna().any():
+            raise ValueError(f"{table_name}.{column} must not contain missing values")
+        frame[column] = frame[column].astype(str)
+        if frame[column].str.strip().eq("").any():
+            raise ValueError(f"{table_name}.{column} must not contain empty values")
+
+
 def parse_formats(value: str | Sequence[str]) -> tuple[str, ...]:
     """Parse and validate a comma-separated output format list."""
     if isinstance(value, str):

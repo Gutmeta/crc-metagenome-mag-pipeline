@@ -33,6 +33,7 @@ if (!is.finite(max_labels) || max_labels < 0) stop("max labels must be non-negat
 
 data <- read_table_file(args$input)
 require_columns(data, c("feature", "effect", "q_value"), "volcano input")
+data <- require_nonempty_text(data, c("feature"), "volcano input")
 data$effect <- suppressWarnings(as.numeric(data$effect))
 data$q_value <- suppressWarnings(as.numeric(data$q_value))
 if (any(!is.finite(data$effect)) || any(!is.finite(data$q_value))) {
@@ -48,6 +49,7 @@ data$direction[data$q_value <= q_threshold & data$effect <= -effect_threshold] <
 
 if (!"label" %in% names(data)) data$label <- ""
 data$label <- as.character(data$label)
+data$label[is.na(data$label)] <- ""
 candidate_order <- order(data$q_value, -abs(data$effect))
 selected <- head(candidate_order[data$direction[candidate_order] != "Not significant"], max_labels)
 fallback_labels <- !nzchar(data$label)

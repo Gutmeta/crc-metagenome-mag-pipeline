@@ -17,6 +17,7 @@ from matplotlib.gridspec import GridSpec
 
 from plotting_common import (
     configure_style,
+    nonempty_text,
     ordered_unique,
     parse_formats,
     read_table,
@@ -39,9 +40,9 @@ def main() -> None:
     configure_style()
     membership = read_table(args.input)
     require_columns(membership, ["item_id", "set_name"], "set membership")
-    membership = membership[["item_id", "set_name"]].astype(str).drop_duplicates()
-    if membership.apply(lambda column: column.str.strip().eq("").any()).any():
-        raise ValueError("item_id and set_name must not contain empty values")
+    membership = membership[["item_id", "set_name"]].copy()
+    nonempty_text(membership, ["item_id", "set_name"], "set membership")
+    membership = membership.drop_duplicates()
     set_order = ordered_unique(membership["set_name"])
     if len(set_order) < 2:
         raise ValueError("At least two sets are required")

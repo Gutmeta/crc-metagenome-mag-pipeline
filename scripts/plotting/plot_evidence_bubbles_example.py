@@ -17,6 +17,7 @@ from matplotlib.colors import TwoSlopeNorm
 from plotting_common import (
     configure_style,
     finite_numeric,
+    nonempty_text,
     ordered_unique,
     parse_formats,
     read_table,
@@ -37,6 +38,7 @@ def main() -> None:
     data = read_table(args.input)
     require_columns(data, ["feature", "database", "comparison", "effect", "q_value"], "evidence bubbles")
     finite_numeric(data, ["effect", "q_value"], "evidence bubbles")
+    nonempty_text(data, ["feature", "database", "comparison"], "evidence bubbles")
     if data.duplicated(["feature", "database", "comparison"]).any():
         raise ValueError("evidence bubbles contains duplicate feature/database/comparison rows")
     if ((data["q_value"] <= 0) | (data["q_value"] > 1)).any():

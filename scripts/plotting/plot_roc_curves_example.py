@@ -18,6 +18,7 @@ from plotting_common import (
     categorical_colors,
     configure_style,
     finite_numeric,
+    nonempty_text,
     parse_formats,
     read_table,
     require_columns,
@@ -61,8 +62,8 @@ def main() -> None:
     predictions = read_table(args.input)
     require_columns(predictions, ["comparison", "label", "score"], "ROC predictions")
     finite_numeric(predictions, ["label", "score"], "ROC predictions")
-    labels_seen = set(predictions["label"].astype(int))
-    if labels_seen - {0, 1}:
+    nonempty_text(predictions, ["comparison"], "ROC predictions")
+    if not predictions["label"].isin([0, 1]).all():
         raise ValueError("label must contain only 0 and 1")
     predictions["label"] = predictions["label"].astype(int)
     if ((predictions["score"] < 0) | (predictions["score"] > 1)).any():

@@ -55,6 +55,17 @@ require_columns <- function(frame, columns, table_name = "input") {
   }
 }
 
+require_nonempty_text <- function(frame, columns, table_name = "input") {
+  for (column in columns) {
+    values <- frame[[column]]
+    if (anyNA(values) || any(!nzchar(trimws(as.character(values))))) {
+      stop(table_name, ".", column, " must not contain missing or empty values", call. = FALSE)
+    }
+    frame[[column]] <- as.character(values)
+  }
+  frame
+}
+
 parse_formats <- function(value) {
   formats <- unique(tolower(trimws(strsplit(value, ",", fixed = TRUE)[[1]])))
   formats <- formats[nzchar(formats)]

@@ -18,6 +18,7 @@ from plotting_common import (
     categorical_colors,
     configure_style,
     finite_numeric,
+    nonempty_text,
     parse_formats,
     read_table,
     require_columns,
@@ -51,8 +52,7 @@ def main() -> None:
     data = read_table(args.input)
     require_columns(data, ["x", "y", "group"], "association scatter")
     finite_numeric(data, ["x", "y"], "association scatter")
-    if data["group"].astype(str).str.strip().eq("").any():
-        raise ValueError("group must not contain empty values")
+    nonempty_text(data, ["group"], "association scatter")
 
     colors = categorical_colors(data["group"])
     figure, axis = plt.subplots(figsize=(7.2, 5.5))

@@ -19,11 +19,9 @@ set.seed(as.integer(args$seed))
 
 data <- read_table_file(args$input)
 require_columns(data, c("cohort", "metric", "group", "value"), "group distributions")
+data <- require_nonempty_text(data, c("cohort", "metric", "group"), "group distributions")
 data$value <- suppressWarnings(as.numeric(data$value))
 if (any(!is.finite(data$value))) stop("group distributions value must be finite", call. = FALSE)
-if (any(!nzchar(as.character(data$cohort))) || any(!nzchar(as.character(data$metric))) || any(!nzchar(as.character(data$group)))) {
-  stop("cohort, metric, and group must not be empty", call. = FALSE)
-}
 
 group_order <- unique(as.character(data$group))
 if (length(group_order) != 2L) {

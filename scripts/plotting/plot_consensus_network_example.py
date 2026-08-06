@@ -19,6 +19,7 @@ from plotting_common import (
     categorical_colors,
     configure_style,
     finite_numeric,
+    nonempty_text,
     parse_formats,
     read_table,
     require_columns,
@@ -51,12 +52,15 @@ def main() -> None:
     require_columns(edges, ["source", "target", "weight", "sign", "support"], "edges")
     finite_numeric(nodes, ["x", "y", "size"], "nodes")
     finite_numeric(edges, ["weight", "support"], "edges")
+    nonempty_text(nodes, ["node_id", "group"], "nodes")
+    nonempty_text(edges, ["source", "target", "sign"], "edges")
 
-    nodes["node_id"] = nodes["node_id"].astype(str)
     if nodes["node_id"].duplicated().any():
         raise ValueError("nodes contains duplicate node_id values")
     if (nodes["size"] <= 0).any():
         raise ValueError("nodes.size must be positive")
+    if ((edges["weight"] <= 0) | (edges["support"] <= 0)).any():
+        raise ValueError("edges.weight and edges.support must be positive")
     allowed_signs = {"positive", "negative"}
     unknown_signs = sorted(set(edges["sign"].astype(str)) - allowed_signs)
     if unknown_signs:

@@ -17,6 +17,7 @@ from matplotlib.colors import TwoSlopeNorm
 from plotting_common import (
     configure_style,
     finite_numeric,
+    nonempty_text,
     ordered_unique,
     parse_formats,
     read_table,
@@ -47,6 +48,7 @@ def main() -> None:
     data = read_table(args.input)
     require_columns(data, ["row", "column", "effect", "q_value"], "association heatmap")
     finite_numeric(data, ["effect", "q_value"], "association heatmap")
+    nonempty_text(data, ["row", "column"], "association heatmap")
     if data.duplicated(["row", "column"]).any():
         raise ValueError("association heatmap contains duplicate row/column pairs")
     if ((data["q_value"] < 0) | (data["q_value"] > 1)).any():

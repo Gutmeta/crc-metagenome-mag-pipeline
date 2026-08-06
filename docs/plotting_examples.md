@@ -42,7 +42,7 @@ All plotting scripts accept `--formats pdf,svg,png`. Use a subset such as `--for
 
 ### Consensus network
 
-The node table requires `node_id`, `x`, `y`, `group`, and positive `size` columns. The edge table requires `source`, `target`, `weight`, `sign` (`positive` or `negative`), and `support`. Every edge endpoint must occur in the node table.
+The node table requires `node_id`, `x`, `y`, `group`, and positive `size` columns. The edge table requires `source`, `target`, positive `weight`, `sign` (`positive` or `negative`), and positive `support`. Every edge endpoint must occur in the node table.
 
 ```bash
 python scripts/plotting/plot_consensus_network_example.py \
@@ -116,7 +116,7 @@ Rscript scripts/plotting/plot_volcano_example.R \
 
 ### AUROC forest plot
 
-The table requires `comparison`, `estimate`, `ci_low`, `ci_high`, `n_positive`, and `n_negative`. Each confidence interval must satisfy `0 <= ci_low <= estimate <= ci_high <= 1`.
+The table requires `comparison`, `estimate`, `ci_low`, `ci_high`, `n_positive`, and `n_negative`. Each confidence interval must satisfy `0 <= ci_low <= estimate <= ci_high <= 1`, and both sample-count columns must contain positive integers.
 
 ```bash
 python scripts/plotting/plot_auc_forest_example.py \

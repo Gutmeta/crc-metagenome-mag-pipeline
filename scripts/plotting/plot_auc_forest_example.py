@@ -16,6 +16,7 @@ import numpy as np
 from plotting_common import (
     configure_style,
     finite_numeric,
+    nonempty_text,
     parse_formats,
     read_table,
     require_columns,
@@ -36,6 +37,7 @@ def main() -> None:
     required = ["comparison", "estimate", "ci_low", "ci_high", "n_positive", "n_negative"]
     require_columns(data, required, "AUC forest")
     finite_numeric(data, ["estimate", "ci_low", "ci_high", "n_positive", "n_negative"], "AUC forest")
+    nonempty_text(data, ["comparison"], "AUC forest")
     if data["comparison"].duplicated().any():
         raise ValueError("AUC forest contains duplicate comparison values")
     invalid = (
@@ -48,6 +50,9 @@ def main() -> None:
         raise ValueError("Each row must satisfy 0 <= ci_low <= estimate <= ci_high <= 1")
     if ((data["n_positive"] <= 0) | (data["n_negative"] <= 0)).any():
         raise ValueError("n_positive and n_negative must be positive")
+    sample_counts = data[["n_positive", "n_negative"]].to_numpy(dtype=float)
+    if not np.allclose(sample_counts, np.round(sample_counts)):
+        raise ValueError("n_positive and n_negative must be integers")
 
     plot_data = data.iloc[::-1].reset_index(drop=True)
     y_positions = np.arange(len(plot_data))

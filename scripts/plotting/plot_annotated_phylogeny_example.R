@@ -22,6 +22,7 @@ if (is.null(tree) || length(tree$tip.label) < 3L) {
 }
 annotation <- read_table_file(args$annotation)
 require_columns(annotation, c("tip_id", "group", "status", "score"), "tree annotation")
+annotation <- require_nonempty_text(annotation, c("tip_id", "group", "status"), "tree annotation")
 if (anyDuplicated(annotation$tip_id)) stop("tree annotation contains duplicate tip_id values", call. = FALSE)
 missing_tips <- setdiff(tree$tip.label, annotation$tip_id)
 if (length(missing_tips) > 0L) {
@@ -35,9 +36,6 @@ if (any(!is.finite(annotation$score)) || any(annotation$score < 0)) {
 
 groups <- unique(as.character(annotation$group))
 statuses <- unique(as.character(annotation$status))
-if (any(!nzchar(groups)) || any(!nzchar(statuses))) {
-  stop("tree annotation group and status must not be empty", call. = FALSE)
-}
 group_colors <- stats::setNames(grDevices::hcl.colors(length(groups), "Dark 3"), groups)
 status_colors <- stats::setNames(grDevices::hcl.colors(length(statuses), "Set 2"), statuses)
 score_range <- range(annotation$score)

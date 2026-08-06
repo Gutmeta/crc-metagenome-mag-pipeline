@@ -17,6 +17,7 @@ from matplotlib.colors import Normalize, TwoSlopeNorm
 from plotting_common import (
     configure_style,
     finite_numeric,
+    nonempty_text,
     parse_formats,
     read_table,
     require_columns,
@@ -38,6 +39,7 @@ def main() -> None:
     data = read_table(args.input)
     require_columns(data, ["dataset", "model_a_auc", "model_b_auc"], "performance matrix")
     finite_numeric(data, ["model_a_auc", "model_b_auc"], "performance matrix")
+    nonempty_text(data, ["dataset"], "performance matrix")
     if data["dataset"].duplicated().any():
         raise ValueError("performance matrix contains duplicate dataset values")
     values = data[["model_a_auc", "model_b_auc"]].to_numpy(dtype=float)
