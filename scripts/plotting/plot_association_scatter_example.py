@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Plot grouped associations with linear fits and confidence bands.
 
-Representative source lineage: pipeline_IBD within-cohort association figures.
+Analysis context: within-cohort association analysis.
 """
 
 from __future__ import annotations

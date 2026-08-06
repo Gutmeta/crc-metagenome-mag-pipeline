@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Plot precomputed AUROC estimates and confidence intervals as a forest plot.
 
-Representative source lineage: TCG-FDC cohort-level AUROC forest figures.
+Analysis context: cohort-level model-discrimination summaries.
 """
 
 from __future__ import annotations

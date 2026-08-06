@@ -1,7 +1,7 @@
 #!/usr/bin/env Rscript
 
 # Plot precomputed feature effects and FDR values as a labeled volcano plot.
-# Representative source lineage: pipeline_Pan cross-cohort meta-analysis figures.
+# Analysis context: differential-association summaries.
 
 script_args <- commandArgs(trailingOnly = FALSE)
 script_file <- sub("^--file=", "", script_args[grepl("^--file=", script_args)])[[1]]

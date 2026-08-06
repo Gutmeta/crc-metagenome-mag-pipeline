@@ -1,8 +1,13 @@
 # CRC Metagenome MAG Pipeline
 
-Example workflow scripts for a colorectal cancer (CRC) metagenome and MAG-based analysis pipeline.
+Code and documentation for a colorectal cancer (CRC) metagenome and
+metagenome-assembled genome (MAG) analysis workflow.
 
-This repository is intended as companion code for a manuscript. It provides a representative set of numbered workflow scripts used for read processing, MAG profiling, taxonomic annotation, co-abundance network analysis, C-TCG/CC-TCG feature construction, and downstream machine-learning evaluation.
+This repository accompanies a manuscript describing read processing, MAG
+profiling, taxonomic annotation, co-abundance network analysis, C-TCG/CC-TCG
+feature construction, external validation, and downstream machine-learning
+evaluation. The numbered scripts and plotting interfaces document the
+computational procedures used at each stage.
 
 ## Repository Layout
 
@@ -24,22 +29,34 @@ crc-metagenome-mag-pipeline/
     └── plotting_examples.md
 ```
 
-## What Is Included
+## Repository Contents
 
-- Representative workflow scripts from steps 1-42, renamed with two-digit prefixes.
-- One default example for parameter trials, such as `06_prepare_fastspar_input.py` for the core MAG prevalence filter.
-- One representative `*_example` script for repeated dataset-specific analyses.
-- Example configuration and sample metadata templates.
-- A compact workflow overview for readers and reviewers.
-- Twelve privacy-safe plotting examples covering networks, heatmaps, associations,
-  model summaries, annotated phylogenies, ordination, and functional evidence.
+- Numbered scripts covering preprocessing, MAG generation and profiling,
+  taxonomic annotation, co-abundance networks, C-TCG/CC-TCG construction, and
+  validation analyses.
+- Configuration and sample-metadata templates for adapting the workflow to a
+  local compute environment.
+- A stage-by-stage [workflow overview](docs/workflow_overview.md) that maps the
+  numbered scripts to their analytical roles.
+- Twelve command-line plotting examples for networks, association summaries,
+  model evaluation, annotated phylogenies, ordination, and functional evidence.
+- A Conda environment specification for the shared Python, R, and command-line
+  dependencies.
 
-## What Is Not Included
+## Data Availability and Repository Scope
 
-- Raw sequencing files, SRA files, FASTQ files, BAM files, MAG FASTA files, or large intermediate results.
-- Auto-generated per-sample job directories such as `1.jobs/`, `3.DiTASiC_jobs/`, `17.zkzzfx.jobs/`, and `19.DiTASiC_jobs/`.
-- Redundant trial scripts for alternative thresholds or cohort-specific repetitions. These were collapsed to one representative example per workflow step.
-- Machine-specific private paths. Original local paths were replaced with placeholders such as `/path/to/data2`, `/path/to/storage`, `/path/to/conda`, and `/path/to/crc-metagenome-mag-pipeline`.
+This repository distributes source code, configuration templates, and a
+synthetic plotting-data generator. Study sequencing data and derived
+participant-level results are not bundled with the code.
+
+- Study inputs should be obtained through the repositories, accession records,
+  and data-access routes reported in the accompanying manuscript.
+- GTDB, host-filtering, and other reference databases must be downloaded from
+  their respective providers under the applicable terms.
+- Large intermediate files, trained-model outputs, and generated figures should
+  be stored outside the Git repository.
+- Filesystem locations are expressed as `/path/to/...` placeholders and must be
+  configured for the user's compute environment.
 
 ## Dependencies
 
@@ -61,7 +78,7 @@ Several workflow steps also require external command-line tools and reference da
 
 Scripts under `scripts/plotting/` use command-line arguments and do not require
 editing source paths. Their complete input schemas are documented in
-[`docs/plotting_examples.md`](docs/plotting_examples.md). To run a privacy-safe
+[`docs/plotting_examples.md`](docs/plotting_examples.md). To run a synthetic
 smoke test entirely outside the repository:
 
 ```bash
@@ -86,14 +103,19 @@ bash scripts/07_run_fastspar_1.sh
 python scripts/08_extract_network_edges.py
 ```
 
-The scripts are presented as a transparent workflow record for publication. They are not guaranteed to be one-command portable without adapting paths, databases, cluster settings, and dataset metadata.
+Execution of the numbered workflow requires local configuration of input paths,
+reference databases, software environments, and cluster resources. These
+settings are kept explicit so that the analytical steps can be audited and
+adapted to the target compute environment.
 
-## Reproducibility and Data Scope
+## Reproducibility
 
 - `environment.yml` records the shared Python, R, and command-line dependencies.
-- The numbered scripts preserve representative manuscript analysis logic; repeated cohort-specific and parameter-trial scripts are intentionally collapsed to one documented example.
-- The plotting examples reproduce figure-generation patterns with synthetic inputs, not the manuscript's numerical results or participant-level analyses.
-- Raw data, private metadata, model predictions, generated figures, and machine-specific paths are not distributed in this repository.
+- The numbered scripts correspond to the principal analytical stages described
+  in the manuscript; dataset-specific variants use the same documented workflow
+  interfaces.
+- The plotting examples demonstrate figure generation with synthetic inputs;
+  manuscript values must be supplied from the corresponding analysis outputs.
 - For peer review or publication, report the repository URL together with a release tag or commit identifier so the reviewed code remains unambiguous.
 
 The repository is released under the [MIT License](LICENSE).

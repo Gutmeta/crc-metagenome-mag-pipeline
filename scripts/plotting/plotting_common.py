@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Shared, privacy-safe helpers for the portable plotting examples."""
+"""Shared helpers for the portable plotting examples."""
 
 from __future__ import annotations
 

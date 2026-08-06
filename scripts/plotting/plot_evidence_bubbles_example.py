@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Plot functional evidence as effect-colored, FDR-sized bubbles.
 
-Representative source lineage: TCG-FDC structure/function summary figures.
+Analysis context: functional evidence synthesis.
 """
 
 from __future__ import annotations

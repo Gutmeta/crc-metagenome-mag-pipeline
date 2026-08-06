@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Plot one or more ROC curves from out-of-fold or external predictions.
 
-Representative source lineage: TCG-FDC editable-vector ROC figures.
+Analysis context: binary-classifier evaluation.
 """
 
 from __future__ import annotations

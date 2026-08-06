@@ -1,7 +1,7 @@
 #!/usr/bin/env Rscript
 
 # Plot cohort-stratified group distributions with lightweight Wilcoxon annotations.
-# Representative source lineage: pipeline_Pan case-control shift figures.
+# Analysis context: cohort-stratified group comparison.
 
 script_args <- commandArgs(trailingOnly = FALSE)
 script_file <- sub("^--file=", "", script_args[grepl("^--file=", script_args)])[[1]]
