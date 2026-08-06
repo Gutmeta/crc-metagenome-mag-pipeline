@@ -1,6 +1,6 @@
 #!/usr/bin/env Rscript
 
-# Shared, privacy-safe helpers for the portable R plotting examples.
+# Shared helpers for the portable R plotting examples.
 
 parse_cli <- function(args, required = character(), defaults = list()) {
   values <- defaults

@@ -1,7 +1,7 @@
 #!/usr/bin/env Rscript
 
 # Plot a fan phylogeny with portable group, culture-status, and score annotations.
-# Representative source lineage: pipeline_Pan annotated phylogeny figures.
+# Analysis context: phylogenomic annotation.
 
 script_args <- commandArgs(trailingOnly = FALSE)
 script_file <- sub("^--file=", "", script_args[grepl("^--file=", script_args)])[[1]]

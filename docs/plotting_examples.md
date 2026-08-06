@@ -1,8 +1,13 @@
 # Portable Plotting Examples
 
-The scripts in `scripts/plotting/` preserve representative plotting patterns from the CRC, IBD, pan-disease, and TCG-FDC analyses while removing project-specific paths, private identifiers, fixed internal batch names, and patient-level data.
+The scripts in `scripts/plotting/` provide command-line implementations for 12
+figure families used in metagenome association, community-structure, functional,
+phylogenomic, and model-evaluation analyses.
 
-Each visual type is represented once across the source projects. The examples consume small, documented tables and write editable PDF/SVG figures plus optional PNG previews. They do not train predictive models or require access to the manuscript data.
+Each figure family has one documented implementation with a consistent input
+schema and export interface. The scripts consume de-identified or precomputed
+tables and write editable PDF/SVG figures plus optional PNG previews. They do
+not train predictive models or require access to participant-level data.
 
 ## Quick Start
 
@@ -21,22 +26,22 @@ The generated records use identifiers such as `demo_001`; they are entirely synt
 
 All plotting scripts accept `--formats pdf,svg,png`. Use a subset such as `--formats pdf` when only one output is needed.
 
-## Included Figure Types
+## Figure Types
 
-| Example | Representative lineage | Input |
+| Example | Analysis context | Input |
 |---|---|---|
-| `plot_consensus_network_example.py` | `pipeline_CRC` consensus networks | Node and edge tables |
-| `plot_association_heatmap_example.py` | `pipeline_IBD` clinical heatmaps | Long-form effect/FDR table |
-| `plot_association_scatter_example.py` | `pipeline_IBD` within-cohort associations | Grouped x/y observations |
-| `plot_performance_matrix_example.py` | `pipeline_Pan` model comparisons | Paired AUROC table |
-| `plot_annotated_phylogeny_example.R` | `pipeline_Pan` annotated trees | Newick tree and tip annotations |
-| `plot_group_distributions_example.R` | `pipeline_Pan` case-control shifts | Cohort/metric/group observations |
-| `plot_volcano_example.R` | `pipeline_Pan` cross-cohort summaries | Precomputed effects and FDR values |
-| `plot_auc_forest_example.py` | `TCG-FDC` AUROC summaries | Precomputed AUROC confidence intervals |
-| `plot_roc_curves_example.py` | `TCG-FDC` ROC panels | Out-of-fold or external prediction scores |
-| `plot_upset_example.py` | `TCG-FDC` structure/function overlap | Long-form set membership |
-| `plot_pcoa_example.py` | `TCG-FDC`/`pipeline_IBD` ordination | Square distance matrix and metadata |
-| `plot_evidence_bubbles_example.py` | `TCG-FDC` functional summaries | Long-form effect/FDR table |
+| `plot_consensus_network_example.py` | Microbial co-abundance networks | Node and edge tables |
+| `plot_association_heatmap_example.py` | Clinical association summaries | Long-form effect/FDR table |
+| `plot_association_scatter_example.py` | Within-cohort associations | Grouped x/y observations |
+| `plot_performance_matrix_example.py` | Cross-cohort model comparison | Paired AUROC table |
+| `plot_annotated_phylogeny_example.R` | Phylogenomic annotation | Newick tree and tip annotations |
+| `plot_group_distributions_example.R` | Cohort-stratified group comparison | Cohort/metric/group observations |
+| `plot_volcano_example.R` | Differential-association summaries | Precomputed effects and FDR values |
+| `plot_auc_forest_example.py` | Model-discrimination summaries | Precomputed AUROC confidence intervals |
+| `plot_roc_curves_example.py` | Binary-classifier evaluation | Out-of-fold or external prediction scores |
+| `plot_upset_example.py` | Feature-set overlap | Long-form set membership |
+| `plot_pcoa_example.py` | Beta-diversity ordination | Square distance matrix and metadata |
+| `plot_evidence_bubbles_example.py` | Functional evidence synthesis | Long-form effect/FDR table |
 
 ## Commands and Input Schemas
 
@@ -166,7 +171,7 @@ python scripts/plotting/plot_evidence_bubbles_example.py \
   --output-prefix /tmp/crc-mag-plotting-demo/figures/evidence_bubbles
 ```
 
-## Privacy and Reuse Notes
+## Data and Reuse Notes
 
 - Supply only publication-safe, de-identified tables. The plotting scripts do not need names, email addresses, clinical record numbers, cluster paths, or raw sequencing identifiers.
 - Keep generated tables and figures outside the repository. Existing `.gitignore` rules exclude common tabular and image outputs.

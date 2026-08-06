@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Plot an effect-size heatmap with FDR annotations.
 
-Representative source lineage: pipeline_IBD clinical-association figures.
+Analysis context: clinical association summaries.
 """
 
 from __future__ import annotations

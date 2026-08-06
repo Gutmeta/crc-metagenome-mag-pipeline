@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Compute and plot classical PCoA from a square distance matrix.
 
-Representative source lineage: TCG-FDC and pipeline_IBD ordination figures.
+Analysis context: beta-diversity ordination.
 """
 
 from __future__ import annotations

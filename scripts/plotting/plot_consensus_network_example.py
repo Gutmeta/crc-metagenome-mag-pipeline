@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Plot a portable consensus co-abundance network from node and edge tables.
 
-Representative source lineage: pipeline_CRC consensus-network figures.
+Analysis context: microbial co-abundance network visualization.
 """
 
 from __future__ import annotations

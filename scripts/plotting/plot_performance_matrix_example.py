@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Plot a compact annotated matrix comparing two model AUROCs.
 
-Representative source lineage: pipeline_Pan performance-comparison figures.
+Analysis context: cross-cohort model comparison.
 """
 
 from __future__ import annotations

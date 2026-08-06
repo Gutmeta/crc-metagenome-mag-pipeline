@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Plot an UpSet-style intersection summary from long-form set membership.
 
-Representative source lineage: TCG-FDC structure/function overlap figures.
+Analysis context: feature-set overlap.
 """
 
 from __future__ import annotations
