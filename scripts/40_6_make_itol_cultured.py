@@ -41,7 +41,7 @@ def main():
                     default="/path/to/crc-metagenome-mag-pipeline/classify_wf_out/CC_TCG/gtdbtk.summary.tsv",
                     help="GTDB-Tk classify_wf summary.tsv")
     ap.add_argument("--metadata",
-                    default="/mnt/data8/gtdbtk_data/release226/bac120_metadata_r226.tsv.gz",
+                    default="/path/to/gtdbtk_data/release226/bac120_metadata_r226.tsv.gz",
                     help="GTDB bac120_metadata_r226.tsv.gz")
     ap.add_argument("--out",
                     default="/path/to/crc-metagenome-mag-pipeline/gtdbtk_denovo/itol_cultured_colorstrip.txt",
