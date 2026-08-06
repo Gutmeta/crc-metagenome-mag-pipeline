@@ -24,7 +24,7 @@ ROOT_DATA2 = "/path/to/data1"
 DATA_DIR = os.path.join(ROOT_DATA5, DATASET_NAME, "DiTASiC", "abundance")
 SEQKIT_STATS_FILE = os.path.join(ROOT_DATA2, DATASET_NAME, "seqkit_stats.txt")
 
-# 分组文件（如果你的分组文件就在当前目录，也可以保留原写法）
+# Group metadata file, resolved relative to the working directory.
 GROUP_FILE = f"{DATASET_NAME}_CRC_Group.txt"
 
 OUT_DIR = os.path.join(ROOT_DATA5, "ML_results")
@@ -96,7 +96,7 @@ for file_path in file_list:
     # 3) 过滤显著 taxa
     df = df[df["raw.pval"] <= 0.05]
 
-    # 4) pval过滤后为空：直接剔除（关键：避免变成全0行）
+    # 4) Drop samples with no taxa after p-value filtering to avoid all-zero rows.
     if df.empty:
         skipped_empty_after_pval.append(sample_id)
         continue
@@ -126,14 +126,14 @@ if (~valid_reads_mask).any():
     abundance_matrix = abundance_matrix.loc[valid_reads_mask]
     reads_aligned = reads_aligned.loc[valid_reads_mask]
 
-# 标准化为相对丰度（不要在这里 fillna(0) 去“掩盖问题”）
+# Normalize to relative abundance without masking invalid values.
 abundance_rel = abundance_matrix.div(reads_aligned, axis=0)
 
 # 防御性过滤：剔除全 NaN / 全 0 行
 abundance_rel = abundance_rel.dropna(axis=0, how="all")
 abundance_rel = abundance_rel.loc[(abundance_rel.fillna(0) != 0).any(axis=1)]
 
-# （可选但推荐）剔除全0列，减少无用特征
+# Remove all-zero columns to reduce unused features.
 abundance_rel = abundance_rel.loc[:, (abundance_rel.fillna(0) != 0).any(axis=0)]
 
 # 对齐标签（最终进入模型样本）
@@ -161,7 +161,7 @@ loo = LeaveOneOut()
 y_true, y_scores = [], []
 train_accuracies, val_accuracies = [], []
 
-# === 新增：用于计算 LOOCV 平均特征重要性 ===
+# Accumulate mean feature importance across LOOCV folds.
 importance_sum = np.zeros(n_features, dtype=float)
 importance_sq_sum = np.zeros(n_features, dtype=float)
 n_folds = 0
@@ -179,14 +179,14 @@ for train_idx, test_idx in loo.split(X, y):
         random_state=42,
         tree_method='hist',
         device="cuda:0",
-        # 你也可以指定 importance_type（默认是 gain，保持一致）
+        # Fix the importance type to gain for consistency across folds.
         importance_type="gain"
     )
 
     # 训练
     clf.fit(X_train_gpu, y_train_gpu)
 
-    # === 新增：收集该 fold 的特征重要性 ===
+    # Collect feature importance for the current fold.
     fold_imp = np.asarray(clf.feature_importances_, dtype=float)
     if fold_imp.shape[0] != n_features:
         raise ValueError(

@@ -71,19 +71,19 @@ cat("✅ 分组表格已保存为 C1_clusters_table.csv\n")
 # === WGCNA分析（识别模块）===
 #library(WGCNA)
 
-# WGCNA要求行为样本，列为特征；我们用伪表达矩阵构造它
+# WGCNA expects samples as rows and features as columns; transpose the adjacency matrix to form a pseudo-expression matrix.
 #fake_expr <- t(adj_mat)
 
 # 关闭WGCNA的交互式提示
 #options(stringsAsFactors = FALSE)
-#allowWGCNAThreads()  # 多线程加速（可选）
+#allowWGCNAThreads()  # Optional multithreading.
 
 # 构建模块
 #net <- blockwiseModules(
 #  fake_expr,
-#  power = 1,                      # 因为你只有±1，设为1即可
+#  power = 1,                      # Binary signed adjacency values use power 1.
 #  TOMType = "unsigned",          # 不考虑正负号方向
-#  minModuleSize = 10,            # 可调：模块最小大小
+#  minModuleSize = 10,            # Minimum module size.
 # reassignThreshold = 0,
 # mergeCutHeight = 0.25,
 #  numericLabels = TRUE,

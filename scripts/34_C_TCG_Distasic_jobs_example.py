@@ -11,7 +11,6 @@ with open(sample_list_file, 'r') as f:
 template = r'''#!/usr/bin/env bash
 
 #SBATCH --job-name=__SAMPLE__
-#SBATCH --nodelist=cn204
 #SBATCH --chdir=/path/to/scratch/tmp_slurm
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=16
@@ -29,7 +28,7 @@ JOB_TAG="${SLURM_JOB_ID:-manual_$(date +%Y%m%d%H%M%S)}"
 JOB_NAME="${SLURM_JOB_NAME:-__SAMPLE__}"
 BASE_NAME="__SAMPLE__"
 
-REMOTE_HOST="192.168.2.206"
+REMOTE_HOST="source-host.example.org"
 REMOTE_USER_HOST="user@${REMOTE_HOST}"
 REMOTE_READ1="/path/to/data1/FengQ_2015/__SAMPLE__/__SAMPLE___1.fastq.gz"
 REMOTE_READ2="/path/to/data1/FengQ_2015/__SAMPLE__/__SAMPLE___2.fastq.gz"
@@ -37,7 +36,7 @@ REMOTE_DITASIC_ROOT="/path/to/data2/CRC/CCDC2/DiTASiC"
 
 BASE_TMP="/path/to/scratch/tmp_slurm/FengQ_2015/DiTASiC"
 LOG_DIR="/path/to/scratch/tmp_slurm/FengQ_2015/slurm_logs"
-LOCAL_SHARED_DITASIC_ROOT="${BASE_TMP}/shared_from_206"
+LOCAL_SHARED_DITASIC_ROOT="${BASE_TMP}/shared_resources"
 LOCAL_INDEX="${LOCAL_SHARED_DITASIC_ROOT}/kallisto_index"
 LOCAL_REMOTE_REF_PATHS="${LOCAL_SHARED_DITASIC_ROOT}/ref_paths.txt"
 LOCAL_REF_PATHS="${LOCAL_SHARED_DITASIC_ROOT}/ref_paths.local.txt"
@@ -47,7 +46,7 @@ LOCAL_REF_FILES_FROM="${LOCAL_SHARED_DITASIC_ROOT}/ref_paths.files_from.txt"
 LOCAL_MAPPING_DIR="${LOCAL_SHARED_DITASIC_ROOT}/ditasic_mapping"
 LOCAL_ABUNDANCE_DIR="${LOCAL_SHARED_DITASIC_ROOT}/abundance"
 LOCAL_SHARED_RUN_DIR="${LOCAL_SHARED_DITASIC_ROOT}/job_runs/${BASE_NAME}/${JOB_TAG}"
-SYNC_LOCK_FILE="${BASE_TMP}/.shared_from_206.lock"
+SYNC_LOCK_FILE="${BASE_TMP}/.shared_resources.lock"
 
 LOCAL_ROOT="${BASE_TMP}/${BASE_NAME}/${JOB_TAG}"
 LOCAL_INPUT_DIR="${LOCAL_ROOT}/input"
@@ -112,7 +111,7 @@ cleanup() {
   if [ "$rc" -eq 0 ]; then
     echo "[INFO] 任务完成"
   else
-    echo "[INFO] 任务失败，保留 204 本地现场以便排查"
+    echo "[INFO] 任务失败，保留本地工作目录以便排查"
   fi
   echo "[INFO] 本地工作目录: ${LOCAL_ROOT}"
   echo "[INFO] 本地 DiTASiC 目录: ${LOCAL_SHARED_DITASIC_ROOT}"
@@ -146,13 +145,13 @@ ssh -o BatchMode=yes -o StrictHostKeyChecking=accept-new \
   "${REMOTE_USER_HOST}" \
   "test -r '${REMOTE_READ1}' && test -r '${REMOTE_READ2}' && test -r '${REMOTE_DITASIC_ROOT}/kallisto_index' && test -r '${REMOTE_DITASIC_ROOT}/ref_paths.txt' && test -r '${REMOTE_DITASIC_ROOT}/similarity_matrix.npy'"
 
-echo "[INFO] 从 206 拉取原始输入到 204 本地临时目录"
+echo "[INFO] 从源主机拉取原始输入到本地临时目录"
 rsync -av --partial -e "${RSYNC_RSH}" \
   "${REMOTE_USER_HOST}:${REMOTE_READ1}" \
   "${REMOTE_USER_HOST}:${REMOTE_READ2}" \
   "${LOCAL_INPUT_DIR}/"
 
-echo "[INFO] 从 206 同步 DiTASiC 资源到 204 本地目录"
+echo "[INFO] 从源主机同步 DiTASiC 资源到本地目录"
 exec 9>"${SYNC_LOCK_FILE}"
 flock 9
 rsync -av --partial -e "${RSYNC_RSH}" \
@@ -164,7 +163,7 @@ rsync -av --partial -e "${RSYNC_RSH}" \
 sed -e 's/\r$//' -e '/^[[:space:]]*$/d' -e 's#^/##' "${LOCAL_REMOTE_REF_PATHS}" > "${LOCAL_REF_FILES_FROM}"
 [ -s "${LOCAL_REF_FILES_FROM}" ] || { echo "[ERROR] ref_paths 为空: ${LOCAL_REMOTE_REF_PATHS}" >&2; exit 21; }
 
-echo "[INFO] 从 206 同步参考基因组到 204 本地缓存"
+echo "[INFO] 从源主机同步参考基因组到本地缓存"
 rsync -av --partial --files-from="${LOCAL_REF_FILES_FROM}" -e "${RSYNC_RSH}" \
   "${REMOTE_USER_HOST}:/" \
   "${LOCAL_REF_CACHE_ROOT}/"

@@ -16,7 +16,7 @@ for sample in samples:
 #SBATCH --job-name={sample}       # 作业名
 #SBATCH --ntasks=1                  # 使用一个任务
 #SBATCH --cpus-per-task=32           # 每个任务使用 32 个 CPU 核心
-#SBATCH --mem=16GB                   # 请求 8GB 内存
+#SBATCH --mem=16GB                   # 请求 16GB 内存
 #SBATCH --output=/path/to/storage/data/CRC/ThomasAM_2018/slurm_out/{sample}.out
 #SBATCH --error=/path/to/storage/data/CRC/ThomasAM_2018/slurm_out/{sample}.err
 
@@ -31,4 +31,3 @@ bash /path/to/pipeline/quality_control_assembly_binning.sh 32 \\
         out_file.write(slurm_script)
 
     print(f"Slurm 脚本 {sample}.sh 已生成并保存在 1.jobs 文件夹中")
-

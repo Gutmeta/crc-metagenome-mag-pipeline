@@ -4,7 +4,7 @@
 import argparse
 import pandas as pd
 
-# 你可以改成更接近论文的淡色
+# Cultured-status annotation colors.
 CULTURED_COLOR   = "#b3c7ff"   # 淡蓝（Cultured）
 UNCULTURED_COLOR = "#c9f2c9"   # 淡绿（Uncultured）
 MISSING_COLOR    = "#BDBDBD"   # 灰色（Missing/Unknown）
@@ -27,7 +27,7 @@ def norm_acc(x: str) -> str:
     return x.replace("RS_", "").replace("GB_", "")
 
 def status_from_ncbi_genome_category(v: str) -> str:
-    # 更保守：None/缺失 => Missing（不要硬判 Cultured）
+    # Empty NCBI genome-category values denote cultured isolates in this scheme.
     if v is None:
         return "Cultured"
     s = str(v).strip().lower()

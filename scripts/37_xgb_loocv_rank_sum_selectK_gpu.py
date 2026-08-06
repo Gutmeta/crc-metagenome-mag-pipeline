@@ -71,7 +71,7 @@ ML_DIR = os.path.join(ROOT_DATA5_CCDC2, "ML_results")
 RANKED_FEATURES_TXT = os.path.join(ML_DIR, "global_ranked_features.txt")
 MEAN_IMP_PATTERN = os.path.join(ML_DIR, "*_feature_mean_importance.csv")
 
-# 全范围 K：严格复刻论文“每次移除一个特征”
+# Evaluate the full K range by removing one feature at a time.
 K_MIN = 1
 K_STEP = 1   # 必须为 1 才是“逐个移除”
 
@@ -91,7 +91,7 @@ XGB_PARAMS = dict(
     verbosity=0,
 )
 
-# 输出（paper style）
+# Output paths.
 OUT_FULL = os.path.join(ML_DIR, "rank_sum_curve_fullrange_xgb_gpu.csv")
 OUT_AUC_BYK = os.path.join(ML_DIR, "auc_by_dataset_byK_fullrange_xgb_gpu.csv")
 OUT_BEST_FEATURES = os.path.join(ML_DIR, "bestK_features_fullrange_xgb_gpu.txt")
@@ -254,7 +254,7 @@ def load_dataset_Xy_aligned_gpu(dataset_name: str, ranked_features: list[str]):
     abundance_rel = abundance_rel.loc[group_df.index.intersection(abundance_rel.index)]
     y_np = group_df.loc[abundance_rel.index, "label"].to_numpy(dtype=int)
 
-    # ★关键：按 global ranked_features 对齐（缺失补0），并保持列顺序一致
+    # Align to global ranked_features, fill missing values with zero, and preserve column order.
     X_df = abundance_rel.reindex(columns=ranked_features, fill_value=0.0)
     X_np = X_df.to_numpy(dtype=np.float32)
 
@@ -290,7 +290,7 @@ def loocv_auc_xgb_gpu(X_gpu, y_np: np.ndarray, y_gpu, splits_cp, K: int) -> floa
 
 
 # =========================
-# 4) 全范围K：计算 AUC & rank-sum（核心复刻）
+# 4) Compute AUC and rank-sum across the full K range.
 # =========================
 def eval_rank_sum_fullrange_gpu(datasets_data: dict, K_list: list[int]):
     records = []
@@ -351,7 +351,7 @@ def main():
         datasets_data[ds] = {"X_gpu": X_gpu, "y_np": y_np, "y_gpu": y_gpu, "splits_cp": splits_cp}
         print(f"[LOAD] {ds}: samples={X_gpu.shape[0]}, features_aligned={X_gpu.shape[1]} ({'CUDA' if USE_CUDA else 'CPU'})")
 
-    # —— 复刻论文“从最不重要开始逐个移除”：K 从 P -> 1（每次少1个）
+    # Remove features from least to most important by evaluating K from P to 1.
     K_list = list(range(P, K_MIN - 1, -K_STEP))
     print(f"[INFO] Evaluating full range K: {K_list[0]} -> {K_list[-1]} (step={K_STEP}), total={len(K_list)}")
 
@@ -376,7 +376,7 @@ def main():
     #  - 黑色小点
     #  - y 轴是 Sum of rank
     # =========================
-    plot_df = summary_df.sort_values("K")  # 画图按 K 从小到大（左->右），符合论文 0..800
+    plot_df = summary_df.sort_values("K")  # Sort K in ascending order for the left-to-right axis.
 
     plt.rcParams.update({
         "font.size": 14,

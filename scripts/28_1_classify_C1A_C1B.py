@@ -24,7 +24,7 @@ os.makedirs(c1a_folder, exist_ok=True)
 os.makedirs(c1b_folder, exist_ok=True)
 
 # 合并两张表格，得到fa_filename与Group对应的信息
-# 修改合并时的列名，ID列和Node列不同，需要使用 'ID' 来与 cluster_df 的 'Node' 合并
+# Join the mapping and cluster tables through their normalized ID columns.
 merged_df = pd.merge(
     id_mapping_df[['ID', 'fa_filename']],
     cluster_df[['ID', 'Group']],

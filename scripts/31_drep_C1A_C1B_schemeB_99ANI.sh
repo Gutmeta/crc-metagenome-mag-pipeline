@@ -166,8 +166,7 @@ def die(msg: str, code: int = 1):
     sys.exit(code)
 
 def classify_cluster(c1a: int, c1b: int) -> str:
-    # 你要求的“纯粹”规则：
-    # 只要同时存在 -> MIXED；否则单一 -> C1A / C1B
+    # Classification rule: mixed membership takes precedence over C1A or C1B alone.
     if c1a > 0 and c1b > 0:
         return "MIXED"
     if c1a > 0 and c1b == 0:
@@ -231,7 +230,7 @@ def main():
     winners = w.rename(columns={"cluster": "secondary_cluster", "genome": "winner_genome"})
     winners = winners[["secondary_cluster", "winner_genome"]].drop_duplicates()
 
-    # Winner label from original C1A/C1B (仅作参考，不参与分类)
+    # Original C1A/C1B label, retained for provenance but not used for classification.
     winners = winners.merge(
         lab[["genome", "orig_cluster"]].rename(columns={"genome": "winner_genome", "orig_cluster": "winner_orig_label"}),
         on="winner_genome", how="left"
@@ -277,7 +276,7 @@ def main():
     pd.DataFrame({"genome": dropped}).to_csv(dropped_fp, sep="\t", index=False)
 
     # ===== Split final dereplicated winner genomes into 3 folders =====
-    # We classify winners by their cluster_type (NOT by majority, NOT by winner_orig_label)
+    # Classify winners by cluster_type; majority and winner_orig_label do not affect assignment.
     if not drep_rep_dir or not os.path.isdir(drep_rep_dir):
         die(f"Dereplicated genomes dir not found: {drep_rep_dir}")
 
@@ -292,15 +291,14 @@ def main():
         cluster_type = str(row["cluster_type"])
         winner = str(row["winner_genome"])
 
-        # only keep expected categories; unknown goes to MIXED? better to keep separate but user wants 3 folders only
+        # Map unexpected categories to MIXED so output remains limited to the three documented folders.
         if cluster_type not in {"C1A", "C1B", "MIXED"}:
-            # 不确定类型（理论上不会出现），放入 MIXED 以免丢失
+            # Assign unexpected or missing types to MIXED to avoid dropping genomes.
             cluster_type = "MIXED"
 
         src = os.path.join(drep_rep_dir, winner)
         if not os.path.isfile(src):
-            # fallback: maybe different extension/name; attempt find exact basename
-            # but winner should match; record missing if not found
+            # Record winners that are absent from the dRep output directory.
             missing.append(winner)
             continue
 
