@@ -276,7 +276,7 @@ def main():
     pd.DataFrame({"genome": dropped}).to_csv(dropped_fp, sep="\t", index=False)
 
     # ===== Split final dereplicated winner genomes into 3 folders =====
-    # We classify winners by their cluster_type (NOT by majority, NOT by winner_orig_label)
+    # Classify winners by cluster_type; majority and winner_orig_label do not affect assignment.
     if not drep_rep_dir or not os.path.isdir(drep_rep_dir):
         die(f"Dereplicated genomes dir not found: {drep_rep_dir}")
 
@@ -291,15 +291,14 @@ def main():
         cluster_type = str(row["cluster_type"])
         winner = str(row["winner_genome"])
 
-        # only keep expected categories; unknown goes to MIXED? better to keep separate but user wants 3 folders only
+        # Map unexpected categories to MIXED so output remains limited to the three documented folders.
         if cluster_type not in {"C1A", "C1B", "MIXED"}:
             # Assign unexpected or missing types to MIXED to avoid dropping genomes.
             cluster_type = "MIXED"
 
         src = os.path.join(drep_rep_dir, winner)
         if not os.path.isfile(src):
-            # fallback: maybe different extension/name; attempt find exact basename
-            # but winner should match; record missing if not found
+            # Record winners that are absent from the dRep output directory.
             missing.append(winner)
             continue
 
