@@ -38,8 +38,9 @@ crc-metagenome-mag-pipeline/
   local compute environment.
 - A stage-by-stage [workflow overview](docs/workflow_overview.md) that maps the
   numbered scripts to their analytical roles.
-- Twelve command-line plotting examples for networks, association summaries,
-  model evaluation, annotated phylogenies, ordination, and functional evidence.
+- Thirteen command-line plotting examples for networks, association summaries,
+  model evaluation, annotated phylogenies, culture representation, ordination,
+  and functional evidence.
 - A Conda environment specification for the shared Python, R, and command-line
   dependencies.
 

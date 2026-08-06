@@ -19,10 +19,12 @@ dependencies:
   - r-tidyverse
   - r-wgcna
   - r-ape
+  - r-ggnewscale
   - r-ggrepel
   - r-svglite
   - fastspar
   - fastani
+  - skani
   - seqkit
   - sra-tools
   - kneaddata
