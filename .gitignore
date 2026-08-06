@@ -23,6 +23,8 @@
 *.npz
 *.pkl
 *.pickle
+*.nwk
+*.newick
 *.pdf
 *.png
 *.jpg

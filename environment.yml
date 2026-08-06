@@ -18,6 +18,9 @@ dependencies:
   - r-base
   - r-tidyverse
   - r-wgcna
+  - r-ape
+  - r-ggrepel
+  - r-svglite
   - fastspar
   - fastani
   - seqkit
