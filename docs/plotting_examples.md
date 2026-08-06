@@ -1,6 +1,6 @@
 # Portable Plotting Examples
 
-The scripts in `scripts/plotting/` provide command-line implementations for 12
+The scripts in `scripts/plotting/` provide command-line implementations for 13
 figure families used in metagenome association, community-structure, functional,
 phylogenomic, and model-evaluation analyses.
 
@@ -35,6 +35,7 @@ All plotting scripts accept `--formats pdf,svg,png`. Use a subset such as `--for
 | `plot_association_scatter_example.py` | Within-cohort associations | Grouped x/y observations |
 | `plot_performance_matrix_example.py` | Cross-cohort model comparison | Paired AUROC table |
 | `plot_annotated_phylogeny_example.R` | Phylogenomic annotation | Newick tree and tip annotations |
+| `plot_cultured_fraction_by_order_example.R` | Culture representation by bacterial order | Precomputed counts, confidence intervals, and adjusted tests |
 | `plot_group_distributions_example.R` | Cohort-stratified group comparison | Cohort/metric/group observations |
 | `plot_volcano_example.R` | Differential-association summaries | Precomputed effects and FDR values |
 | `plot_auc_forest_example.py` | Model-discrimination summaries | Precomputed AUROC confidence intervals |
@@ -89,13 +90,32 @@ python scripts/plotting/plot_performance_matrix_example.py \
 
 ### Annotated phylogeny
 
-The annotation table requires `tip_id`, `group`, `status`, and a finite, non-negative `score`. Every Newick tip must have one annotation row.
+The annotation table requires `tip_id`, `group`, `order`, binary `status`
+(`Cultured` or `Uncultured`), and a `score` in `[0, 1]`. Every Newick tip must
+have exactly one annotation row. Status is shown as a translucent sector behind
+the tree; group, order, and score are shown as successive annotation rings.
 
 ```bash
 Rscript scripts/plotting/plot_annotated_phylogeny_example.R \
   --tree /tmp/crc-mag-plotting-demo/inputs/demo_tree.nwk \
   --annotation /tmp/crc-mag-plotting-demo/inputs/tree_annotation.tsv \
   --output-prefix /tmp/crc-mag-plotting-demo/figures/annotated_phylogeny
+```
+
+### Cultured fraction by bacterial order
+
+The precomputed summary table requires unique `dataset`/`order` rows and the
+columns `cultured`, `total`, `ci_low`, `ci_high`, `q_value`, `omnibus_p`, and
+`omnibus_q`. Counts must satisfy `0 <= cultured <= total`; confidence intervals
+must lie in `[0, 1]` and contain `cultured / total`. Panel-level P/q values must
+be constant within each dataset. The plotting script does not infer culture
+status or recompute statistical tests. The numbered workflow's culture-status
+helper documents the upstream species-level matching interface.
+
+```bash
+Rscript scripts/plotting/plot_cultured_fraction_by_order_example.R \
+  --input /tmp/crc-mag-plotting-demo/inputs/cultured_fraction_by_order.tsv \
+  --output-prefix /tmp/crc-mag-plotting-demo/figures/cultured_fraction_by_order
 ```
 
 ### Group distributions
@@ -176,4 +196,7 @@ python scripts/plotting/plot_evidence_bubbles_example.py \
 - Supply only publication-safe, de-identified tables. The plotting scripts do not need names, email addresses, clinical record numbers, cluster paths, or raw sequencing identifiers.
 - Keep generated tables and figures outside the repository. Existing `.gitignore` rules exclude common tabular and image outputs.
 - The examples intentionally separate visualization from cohort-specific modeling. Reproduce the statistical design appropriate to a study before passing estimates or predictions into these scripts.
+- Culture-representation plots consume precomputed binary status calls or
+  summaries. The numbered workflow includes a generic `skani`/GTDB interface
+  for the upstream species-level classification step.
 - PDF and SVG outputs keep text editable when the installed graphics backend supports it; fonts fall back through Arial, Liberation Sans, and DejaVu Sans.

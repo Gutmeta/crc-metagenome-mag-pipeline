@@ -28,6 +28,27 @@ documented configuration fields and script parameters.
 - `39_` to `40_`: run CC-TCG DiTASiC workflows, GTDB-Tk tree/classification, iTOL annotation generation, and abundance matrix construction.
 - `41_` to `42_`: quantify external validation cohorts with DiTASiC and evaluate ROC performance.
 
+The culture-status helper consumes a query map, raw `skani search` results, and
+GTDB metadata. By default it treats hits with ANI >=95% and maximum
+bidirectional alignment fraction >=30% as species-level matches, assigns
+`Cultured` when any qualifying matched species contains an isolate genome, and
+writes both a tip-level evidence table and an iTOL color strip. Query genomes
+remain MAGs; the status describes culture representation of the matched species.
+The query map requires `tip_id` and `query_fasta`; the skani table uses its
+standard `Ref_file`, `Query_file`, `ANI`, `Align_fraction_ref`, and
+`Align_fraction_query` columns, with alignment fractions expressed as
+percentages. GTDB metadata requires `accession`, `gtdb_taxonomy`, and
+`ncbi_genome_category`.
+
+```bash
+python scripts/40_6_make_itol_cultured.py \
+  --query-map query_genomes.tsv \
+  --skani-results gtdb_representative_hits.tsv \
+  --metadata bac120_metadata.tsv.gz \
+  --status-output culture_status_evidence.tsv \
+  --itol-output itol_culture_status.txt
+```
+
 ## Execution Notes
 
 - Configure each `/path/to/...` placeholder with the corresponding local path,

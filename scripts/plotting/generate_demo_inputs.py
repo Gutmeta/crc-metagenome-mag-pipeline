@@ -161,6 +161,70 @@ def structure_function_inputs(output_dir: Path, rng: np.random.Generator) -> Non
     write_table(pd.DataFrame(bubble), output_dir / "evidence_bubbles.tsv")
 
 
+def wilson_interval(successes: int, total: int, z_value: float = 1.959963984540054) -> tuple[float, float]:
+    proportion = successes / total
+    denominator = 1 + z_value**2 / total
+    center = (proportion + z_value**2 / (2 * total)) / denominator
+    half_width = (
+        z_value
+        * np.sqrt(proportion * (1 - proportion) / total + z_value**2 / (4 * total**2))
+        / denominator
+    )
+    return max(0.0, center - half_width), min(1.0, center + half_width)
+
+
+def culture_fraction_inputs(output_dir: Path) -> None:
+    counts = {
+        "Cohort A": {
+            "Actinomycetales": (8, 9),
+            "Bacteroidales": (14, 22),
+            "Lachnospirales": (25, 30),
+            "Oscillospirales": (9, 17),
+            "Other": (12, 19),
+        },
+        "Cohort B": {
+            "Actinomycetales": (10, 10),
+            "Bacteroidales": (19, 24),
+            "Lachnospirales": (28, 32),
+            "Oscillospirales": (16, 25),
+            "Other": (15, 22),
+        },
+        "Cohort C": {
+            "Bacteroidales": (11, 15),
+            "Lachnospirales": (17, 19),
+            "Oscillospirales": (10, 16),
+            "Other": (7, 13),
+        },
+    }
+    omnibus = {
+        "Cohort A": (0.004, 0.012),
+        "Cohort B": (0.018, 0.027),
+        "Cohort C": (0.041, 0.041),
+    }
+    order_q = {
+        ("Cohort A", "Lachnospirales"): 0.032,
+        ("Cohort B", "Actinomycetales"): 0.008,
+    }
+    records = []
+    for dataset, order_counts in counts.items():
+        for order, (cultured, total) in order_counts.items():
+            ci_low, ci_high = wilson_interval(cultured, total)
+            records.append(
+                {
+                    "dataset": dataset,
+                    "order": order,
+                    "cultured": cultured,
+                    "total": total,
+                    "ci_low": ci_low,
+                    "ci_high": ci_high,
+                    "q_value": order_q.get((dataset, order), 0.5),
+                    "omnibus_p": omnibus[dataset][0],
+                    "omnibus_q": omnibus[dataset][1],
+                }
+            )
+    write_table(pd.DataFrame(records), output_dir / "cultured_fraction_by_order.tsv")
+
+
 def r_plot_inputs(output_dir: Path, rng: np.random.Generator) -> None:
     tips = [f"demo_{index:03d}" for index in range(1, 13)]
     clade_a = ",".join(f"{tip}:0.2" for tip in tips[:6])
@@ -170,6 +234,7 @@ def r_plot_inputs(output_dir: Path, rng: np.random.Generator) -> None:
         {
             "tip_id": tips,
             "group": ["Guild A"] * 6 + ["Guild B"] * 6,
+            "order": ["Bacteroidales"] * 3 + ["Lachnospirales"] * 3 + ["Oscillospirales"] * 3 + ["Other"] * 3,
             "status": ["Cultured", "Uncultured"] * 6,
             "score": rng.uniform(0.1, 1.0, len(tips)),
         }
@@ -215,6 +280,7 @@ def main() -> None:
     performance_and_forest_inputs(args.output_dir, rng)
     roc_inputs(args.output_dir, rng)
     structure_function_inputs(args.output_dir, rng)
+    culture_fraction_inputs(args.output_dir)
     r_plot_inputs(args.output_dir, rng)
     print(f"Synthetic plotting inputs written to {args.output_dir}")
 
