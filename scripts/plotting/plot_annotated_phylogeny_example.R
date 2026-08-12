@@ -16,7 +16,10 @@ if (!requireNamespace("svglite", quietly = TRUE)) stop("Missing R package: svgli
 args <- parse_cli(
   commandArgs(trailingOnly = TRUE),
   required = c("tree", "annotation", "output_prefix"),
-  defaults = list(title = "Annotated phylogeny", formats = "pdf,svg,png", open_angle = "70")
+  defaults = list(
+    title = "Annotated phylogeny", formats = "pdf,svg,png", open_angle = "70",
+    cohort_evidence = "", module_input = ""
+  )
 )
 open_angle <- suppressWarnings(as.numeric(args$open_angle))
 if (!is.finite(open_angle) || open_angle < 0 || open_angle >= 180) {
@@ -31,7 +34,13 @@ if (anyDuplicated(tree$tip.label)) stop("Tree contains duplicate tip labels", ca
 tree <- ape::ladderize(tree, right = FALSE)
 
 annotation <- read_table_file(args$annotation)
-require_columns(annotation, c("tip_id", "group", "order", "status", "score"), "tree annotation")
+require_columns(annotation, c("tip_id", "group", "order", "status"), "tree annotation")
+if (!"global_rank_score" %in% names(annotation)) {
+  if (!"score" %in% names(annotation)) {
+    stop("tree annotation is missing required column: global_rank_score", call. = FALSE)
+  }
+  annotation$global_rank_score <- annotation$score
+}
 annotation <- require_nonempty_text(annotation, c("tip_id", "group", "order", "status"), "tree annotation")
 if (anyDuplicated(annotation$tip_id)) stop("tree annotation contains duplicate tip_id values", call. = FALSE)
 missing_tips <- setdiff(tree$tip.label, annotation$tip_id)
@@ -43,12 +52,64 @@ if (length(missing_tips) > 0L || length(extra_tips) > 0L) {
   )
 }
 annotation <- annotation[match(tree$tip.label, annotation$tip_id), , drop = FALSE]
-annotation$score <- suppressWarnings(as.numeric(annotation$score))
-if (any(!is.finite(annotation$score)) || any(annotation$score < 0 | annotation$score > 1)) {
-  stop("tree annotation score must lie in [0, 1]", call. = FALSE)
+annotation$global_rank_score <- suppressWarnings(as.numeric(annotation$global_rank_score))
+if (any(!is.finite(annotation$global_rank_score)) ||
+    any(annotation$global_rank_score < 0 | annotation$global_rank_score > 1)) {
+  stop("tree annotation global_rank_score must lie in [0, 1]", call. = FALSE)
 }
 if (!all(annotation$status %in% c("Cultured", "Uncultured"))) {
   stop("tree annotation status must contain only Cultured or Uncultured", call. = FALSE)
+}
+
+validate_exact_tip_labels <- function(frame, table_name) {
+  missing <- setdiff(tree$tip.label, frame$tip_id)
+  extra <- setdiff(frame$tip_id, tree$tip.label)
+  if (length(missing) > 0L || length(extra) > 0L) {
+    stop(
+      table_name, " and tree labels do not match; missing=", length(missing),
+      ", extra=", length(extra), call. = FALSE
+    )
+  }
+}
+
+cohort_evidence <- NULL
+if (nzchar(args$cohort_evidence)) {
+  cohort_evidence <- read_table_file(args$cohort_evidence)
+  require_columns(cohort_evidence, c("tip_id", "cohort_evidence_score"), "cohort evidence")
+  cohort_evidence <- require_nonempty_text(cohort_evidence, "tip_id", "cohort evidence")
+  if (anyDuplicated(cohort_evidence$tip_id)) {
+    stop("cohort evidence contains duplicate tip_id values", call. = FALSE)
+  }
+  validate_exact_tip_labels(cohort_evidence, "cohort evidence")
+  cohort_evidence$cohort_evidence_score <- suppressWarnings(as.numeric(cohort_evidence$cohort_evidence_score))
+  if (any(!is.finite(cohort_evidence$cohort_evidence_score)) ||
+      any(cohort_evidence$cohort_evidence_score < 0 | cohort_evidence$cohort_evidence_score > 1)) {
+    stop("cohort evidence score must lie in [0, 1]", call. = FALSE)
+  }
+  cohort_evidence <- cohort_evidence[match(tree$tip.label, cohort_evidence$tip_id), , drop = FALSE]
+}
+
+modules <- NULL
+module_names <- character()
+if (nzchar(args$module_input)) {
+  modules <- read_table_file(args$module_input)
+  require_columns(modules, c("tip_id", "module", "score"), "module input")
+  modules <- require_nonempty_text(modules, c("tip_id", "module"), "module input")
+  if (anyDuplicated(modules[c("tip_id", "module")])) {
+    stop("module input contains duplicate tip_id/module keys", call. = FALSE)
+  }
+  modules$score <- suppressWarnings(as.numeric(modules$score))
+  if (any(!is.finite(modules$score)) || any(modules$score < 0 | modules$score > 1)) {
+    stop("module input score must lie in [0, 1]", call. = FALSE)
+  }
+  module_names <- unique(modules$module)
+  validate_exact_tip_labels(unique(modules[c("tip_id")]), "module input")
+  expected_rows <- length(tree$tip.label) * length(module_names)
+  if (nrow(modules) != expected_rows ||
+      any(table(modules$tip_id) != length(module_names)) ||
+      any(table(modules$module) != length(tree$tip.label))) {
+    stop("module input must contain a complete tip-by-module matrix", call. = FALSE)
+  }
 }
 
 make_sector_data <- function(frame, inner_radius, outer_radius, value_column, prefix, angle_width) {
@@ -131,14 +192,58 @@ tip_data <- merge(layout$tips, annotation, by = "tip_id", sort = FALSE)
 tip_data <- tip_data[match(tree$tip.label, tip_data$tip_id), , drop = FALSE]
 
 ring_width <- 0.13
+numeric_ring_width <- 0.16
 ring_gap <- 0.018
 status_data <- make_sector_data(tip_data, 0, tip_radius + 0.02, "status", "status", layout$angle_width)
-group_inner <- tip_radius + 0.05
-group_data <- make_sector_data(tip_data, group_inner, group_inner + ring_width, "group", "group", layout$angle_width)
-order_inner <- group_inner + ring_width + ring_gap
-order_data <- make_sector_data(tip_data, order_inner, order_inner + ring_width, "order", "order", layout$angle_width)
-score_inner <- order_inner + ring_width + 0.045
-score_data <- make_sector_data(tip_data, score_inner, score_inner + 0.18, "score", "score", layout$angle_width)
+next_ring_inner <- tip_radius + 0.05
+
+group_data <- make_sector_data(
+  tip_data, next_ring_inner, next_ring_inner + ring_width,
+  "group", "group", layout$angle_width
+)
+next_ring_inner <- next_ring_inner + ring_width + ring_gap
+order_data <- make_sector_data(
+  tip_data, next_ring_inner, next_ring_inner + ring_width,
+  "order", "order", layout$angle_width
+)
+next_ring_inner <- next_ring_inner + ring_width + ring_gap
+global_rank_data <- make_sector_data(
+  tip_data, next_ring_inner, next_ring_inner + numeric_ring_width,
+  "global_rank_score", "global_rank", layout$angle_width
+)
+next_ring_inner <- next_ring_inner + numeric_ring_width + ring_gap
+
+cohort_evidence_data <- NULL
+if (!is.null(cohort_evidence)) {
+  evidence_tip_data <- merge(
+    layout$tips, cohort_evidence[c("tip_id", "cohort_evidence_score")],
+    by = "tip_id", sort = FALSE
+  )
+  evidence_tip_data <- evidence_tip_data[match(tree$tip.label, evidence_tip_data$tip_id), , drop = FALSE]
+  cohort_evidence_data <- make_sector_data(
+    evidence_tip_data, next_ring_inner, next_ring_inner + numeric_ring_width,
+    "cohort_evidence_score", "cohort_evidence", layout$angle_width
+  )
+  next_ring_inner <- next_ring_inner + numeric_ring_width + ring_gap
+}
+
+module_data <- NULL
+if (!is.null(modules)) {
+  module_pieces <- vector("list", length(module_names))
+  for (module_index in seq_along(module_names)) {
+    module_name <- module_names[[module_index]]
+    module_frame <- modules[modules$module == module_name, c("tip_id", "score"), drop = FALSE]
+    module_frame <- merge(layout$tips, module_frame, by = "tip_id", sort = FALSE)
+    module_frame <- module_frame[match(tree$tip.label, module_frame$tip_id), , drop = FALSE]
+    module_pieces[[module_index]] <- make_sector_data(
+      module_frame, next_ring_inner, next_ring_inner + ring_width,
+      "score", paste0("module_", module_index), layout$angle_width
+    )
+    module_pieces[[module_index]]$module <- module_name
+    next_ring_inner <- next_ring_inner + ring_width + ring_gap
+  }
+  module_data <- do.call(rbind, module_pieces)
+}
 
 status_palette <- c(Cultured = "#8FBBD8", Uncultured = "#C9E29A")
 groups <- unique(annotation$group)
@@ -202,23 +307,61 @@ plot <- ggplot2::ggplot() +
   ) +
   ggnewscale::new_scale_fill() +
   ggplot2::geom_polygon(
-    data = score_data,
+    data = global_rank_data,
     ggplot2::aes(x = x, y = y, group = polygon, fill = as.numeric(value)),
     color = "#F1F3F5", linewidth = 0.03
   ) +
   ggplot2::scale_fill_gradient(
-    name = "Evidence score", low = "#F7F5FB", high = "#8C6BC4", limits = c(0, 1),
+    name = "Global ML rank", low = "#F7F5FB", high = "#7655A3", limits = c(0, 1),
     guide = ggplot2::guide_colorbar(order = 4)
-  ) +
+  )
+
+if (!is.null(cohort_evidence_data)) {
+  plot <- plot +
+    ggnewscale::new_scale_fill() +
+    ggplot2::geom_polygon(
+      data = cohort_evidence_data,
+      ggplot2::aes(x = x, y = y, group = polygon, fill = as.numeric(value)),
+      color = "#F1F3F5", linewidth = 0.03
+    ) +
+    ggplot2::scale_fill_gradient(
+      name = "Cohort ML evidence", low = "#FFF4E6", high = "#D55E00", limits = c(0, 1),
+      guide = ggplot2::guide_colorbar(order = 5)
+    )
+}
+
+if (!is.null(module_data)) {
+  plot <- plot +
+    ggnewscale::new_scale_fill() +
+    ggplot2::geom_polygon(
+      data = module_data,
+      ggplot2::aes(x = x, y = y, group = polygon, fill = as.numeric(value)),
+      color = "#F1F3F5", linewidth = 0.03
+    ) +
+    ggplot2::scale_fill_gradient(
+      name = "Functional module score", low = "#EFF8F2", high = "#238B45", limits = c(0, 1),
+      guide = ggplot2::guide_colorbar(order = 6)
+    )
+}
+
+ring_labels <- c("Group", "Order", "Global ML rank")
+if (!is.null(cohort_evidence_data)) ring_labels <- c(ring_labels, "Cohort ML evidence")
+if (length(module_names) > 0L) ring_labels <- c(ring_labels, module_names)
+
+plot <- plot +
   ggplot2::coord_equal(clip = "off") +
-  ggplot2::labs(title = args$title) +
+  ggplot2::labs(
+    title = args$title,
+    subtitle = paste("Rings (inner to outer):", paste(ring_labels, collapse = "  |  "))
+  ) +
   ggplot2::theme_void(base_family = "sans") +
   ggplot2::theme(
     plot.title = ggplot2::element_text(face = "bold", hjust = 0.5, color = "#20262E"),
+    plot.subtitle = ggplot2::element_text(hjust = 0.5, color = "#4D565F", size = 9),
     legend.position = "right",
     legend.title = ggplot2::element_text(face = "bold"),
     legend.key.size = grid::unit(0.42, "cm"),
     plot.margin = ggplot2::margin(8, 8, 8, 8)
   )
 
-save_ggplot_bundle(plot, args$output_prefix, args$formats, width = 10.2, height = 8.4)
+save_ggplot_bundle(plot, args$output_prefix, args$formats, width = 11.2, height = 8.8)
