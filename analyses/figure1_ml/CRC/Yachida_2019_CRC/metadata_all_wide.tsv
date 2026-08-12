@@ -1,0 +1,644 @@
+study_code	sample_alias	subject_disease_status	age_years	sex
+Yachida_2019_CRC	SMP_a51301fbbc57927acc3d	colorectal cancer	64	male
+Yachida_2019_CRC	SMP_fcb39cbc658b460d5e23	colorectal cancer	66	female
+Yachida_2019_CRC	SMP_bd91bba29d5f8ea5c237	colorectal cancer	61	male
+Yachida_2019_CRC	SMP_93386d9d57ec99b52ec9	colorectal cancer	70	female
+Yachida_2019_CRC	SMP_9ca0e15ab93e3a4bda45	CTR	72	male
+Yachida_2019_CRC	SMP_9e8444c3b4429253abe2	colorectal cancer	62	female
+Yachida_2019_CRC	SMP_62f2536f8a7a83adbc57	colorectal cancer	65	male
+Yachida_2019_CRC	SMP_5e27a15dcfbdfd753af9	colorectal cancer	59	male
+Yachida_2019_CRC	SMP_ef0ee028a36ab4b439d2	colorectal cancer	78	male
+Yachida_2019_CRC	SMP_8a7069a0f23252dbd9d8	colorectal cancer	30	male
+Yachida_2019_CRC	SMP_acb1240b82ab9a8addc3	colorectal cancer	69	female
+Yachida_2019_CRC	SMP_daf93a8511334627b289	colorectal cancer	57	female
+Yachida_2019_CRC	SMP_76b695feedc91d108f2e	colorectal cancer	38	male
+Yachida_2019_CRC	SMP_6105b0ada3edfc4631a1	CTR	73	male
+Yachida_2019_CRC	SMP_fa82d97e7588eef0e7a1	CTR	59	female
+Yachida_2019_CRC	SMP_0fdea9593326c1452157	CTR	64	male
+Yachida_2019_CRC	SMP_15f32ae6b709b6bc9d6c	colorectal cancer	44	female
+Yachida_2019_CRC	SMP_e9d7a89b39f4c9058f5f	CTR	50	female
+Yachida_2019_CRC	SMP_77da88cb81912b54dba6	CTR	67	female
+Yachida_2019_CRC	SMP_fd98d947ab0f52e7123d	CTR	45	male
+Yachida_2019_CRC	SMP_0678d681e713b0889faa	colorectal cancer	62	male
+Yachida_2019_CRC	SMP_7d7a8de5b5136f6e5f90	colorectal cancer	46	male
+Yachida_2019_CRC	SMP_fdf119432e637e6fe5be	colorectal cancer	70	female
+Yachida_2019_CRC	SMP_61801a0ff5231899ac04	colorectal cancer	70	male
+Yachida_2019_CRC	SMP_970615c761c9d75f46c7	colorectal cancer	63	female
+Yachida_2019_CRC	SMP_da1fdb453ab2de03db42	CTR	65	female
+Yachida_2019_CRC	SMP_9966a09df8a0db7f9beb	CTR	76	male
+Yachida_2019_CRC	SMP_a26aed14900308f30cb4	colorectal cancer	69	male
+Yachida_2019_CRC	SMP_7231ffb14a555e9068fd	CTR	76	female
+Yachida_2019_CRC	SMP_a4e7b28f1116ccb1f766	CTR	53	female
+Yachida_2019_CRC	SMP_336d13c481f3f6e7b433	colorectal cancer	45	female
+Yachida_2019_CRC	SMP_16443180db38ff48fbcf	CTR	75	female
+Yachida_2019_CRC	SMP_908f4ff83d7b127551bd	CTR	78	male
+Yachida_2019_CRC	SMP_6aeefe5ef60ea7a1e0a6	colorectal cancer	59	female
+Yachida_2019_CRC	SMP_64e4d0fcbe4d7fa5ff28	CTR	45	male
+Yachida_2019_CRC	SMP_4c24c4e86d7738160c14	colorectal cancer	64	male
+Yachida_2019_CRC	SMP_7385cbfeb6effc39c223	CTR	76	male
+Yachida_2019_CRC	SMP_cd92effe053a5d81ef5e	CTR	42	female
+Yachida_2019_CRC	SMP_ed25b1e51e12296a4c26	colorectal cancer	32	female
+Yachida_2019_CRC	SMP_6d0af4bb50154d0fca74	colorectal cancer	49	female
+Yachida_2019_CRC	SMP_086123bede590174a20d	colorectal cancer	67	female
+Yachida_2019_CRC	SMP_3cde912aca49b6db796f	CTR	49	female
+Yachida_2019_CRC	SMP_2264d81795431952ecc4	colorectal cancer	78	male
+Yachida_2019_CRC	SMP_dd9172b67546ff94cdab	colorectal cancer	54	female
+Yachida_2019_CRC	SMP_73202cbb7ec8cd9adf25	CTR	42	male
+Yachida_2019_CRC	SMP_435563dc36c7a0ab0579	colorectal cancer	59	female
+Yachida_2019_CRC	SMP_3831ec277448a0ce22f2	CTR	40	male
+Yachida_2019_CRC	SMP_9c8e5166f57cfa68b44f	colorectal cancer	70	male
+Yachida_2019_CRC	SMP_e5c09cf27f90efac6d24	CTR	76	male
+Yachida_2019_CRC	SMP_5e69ad471f8d0bca87bd	colorectal cancer	46	female
+Yachida_2019_CRC	SMP_a4aea7c2814f4fc960c1	CTR	49	female
+Yachida_2019_CRC	SMP_12ff11aa701ca3831fd9	CTR	63	male
+Yachida_2019_CRC	SMP_3580dbdbb38910a212ee	colorectal cancer	62	male
+Yachida_2019_CRC	SMP_3223bf69306d167989f3	CTR	49	male
+Yachida_2019_CRC	SMP_88823c58a354bc94cb8a	colorectal cancer	75	female
+Yachida_2019_CRC	SMP_9be37e88c21474fb25b3	colorectal cancer	73	female
+Yachida_2019_CRC	SMP_e2e026bdeef1881438a9	CTR	51	male
+Yachida_2019_CRC	SMP_aba841fa5585b0bbd41a	CTR	66	female
+Yachida_2019_CRC	SMP_a053b2464a40984b495b	CTR	71	female
+Yachida_2019_CRC	SMP_cc0d6c079e74cd0c7229	CTR	66	male
+Yachida_2019_CRC	SMP_d0f467a4d25712e2063e	CTR	64	female
+Yachida_2019_CRC	SMP_0a72d4c2fae414e964e0	CTR	44	male
+Yachida_2019_CRC	SMP_36899f779762a204c3a7	CTR	74	male
+Yachida_2019_CRC	SMP_ad23e9346e5d75c77a30	CTR	70	male
+Yachida_2019_CRC	SMP_5e45ec53cbcb0976eaad	colorectal cancer	55	male
+Yachida_2019_CRC	SMP_eeee94c8232f3536c142	CTR	70	male
+Yachida_2019_CRC	SMP_366dbc1bc1a9de412ad9	CTR	75	male
+Yachida_2019_CRC	SMP_689a22e150e3e8e821d0	CTR	76	male
+Yachida_2019_CRC	SMP_f2d3e3c3ba2de8f2a292	CTR	76	male
+Yachida_2019_CRC	SMP_8aa0ae5f4cc5083f5883	colorectal cancer	28	male
+Yachida_2019_CRC	SMP_feb0885d34ee46e962f3	colorectal cancer	69	female
+Yachida_2019_CRC	SMP_e9bbb78a7504ae382a43	CTR	73	female
+Yachida_2019_CRC	SMP_cc24de604dd1450b22cc	CTR	77	female
+Yachida_2019_CRC	SMP_ca51612eb1eeee014821	colorectal cancer	51	male
+Yachida_2019_CRC	SMP_55a1644cc199ded06972	CTR	65	male
+Yachida_2019_CRC	SMP_b981961a2e552aa10148	CTR	66	female
+Yachida_2019_CRC	SMP_dd5f9012346486aed50f	colorectal cancer	48	male
+Yachida_2019_CRC	SMP_6f1f6270a0ef3ad9ba8e	colorectal cancer	65	male
+Yachida_2019_CRC	SMP_1cca246049ca84466303	colorectal cancer	70	male
+Yachida_2019_CRC	SMP_f80e146f7a1e0c63281e	colorectal cancer	58	male
+Yachida_2019_CRC	SMP_edb26b27baf5a8585b57	colorectal cancer	58	male
+Yachida_2019_CRC	SMP_1b00a67a945d641a2b80	control patient	61	female
+Yachida_2019_CRC	SMP_94a0ad04ac1e47f0317b	control patient	42	female
+Yachida_2019_CRC	SMP_ebdf7ef25f4497d56918	nonadvanced colorectal adenoma	50	male
+Yachida_2019_CRC	SMP_3caea5a23632188c417c	colorectal cancer	64	female
+Yachida_2019_CRC	SMP_be491fec39a9a14738f1	control patient	43	female
+Yachida_2019_CRC	SMP_82f20141f3ad35c2afdb	CTR	44	male
+Yachida_2019_CRC	SMP_3d0116f5b6f1d4c73d33	nonadvanced colorectal adenoma	78	male
+Yachida_2019_CRC	SMP_398448b9c540bc5914ba	CTR	76	male
+Yachida_2019_CRC	SMP_6f3f9dbdb639d9f96096	nonadvanced colorectal adenoma	44	male
+Yachida_2019_CRC	SMP_3883bca4fdfea1e1f215	control patient	50	female
+Yachida_2019_CRC	SMP_6f440d7227cabb4319ea	colorectal cancer	58	male
+Yachida_2019_CRC	SMP_65f72f35c1f9f0d8a12c	nonadvanced colorectal adenoma	64	male
+Yachida_2019_CRC	SMP_5be7282efedf89d0bbc0	CTR	68	female
+Yachida_2019_CRC	SMP_a50b3e04ca78e6be9c5e	nonadvanced colorectal adenoma	64	male
+Yachida_2019_CRC	SMP_858b2ac5c25c06d54fe6	nonadvanced colorectal adenoma	71	male
+Yachida_2019_CRC	SMP_070ea1082575c5e1eb10	CTR	67	female
+Yachida_2019_CRC	SMP_8d2eda693a57389d988f	nonadvanced colorectal adenoma	65	female
+Yachida_2019_CRC	SMP_3a2cdd468527a61c448d	CTR	78	female
+Yachida_2019_CRC	SMP_5b1f68307d520b0851e8	nonadvanced colorectal adenoma	52	male
+Yachida_2019_CRC	SMP_304b5188fba3d1275ca7	nonadvanced colorectal adenoma	72	female
+Yachida_2019_CRC	SMP_342c0b08f41859236f04	nonadvanced colorectal adenoma	53	male
+Yachida_2019_CRC	SMP_26b800d3c93afbeeaf27	colorectal cancer	61	male
+Yachida_2019_CRC	SMP_8dd41a1306201d031526	colorectal cancer	58	male
+Yachida_2019_CRC	SMP_bfc3a5b1896bd2815169	colorectal cancer	69	male
+Yachida_2019_CRC	SMP_85d4c7d42362331a5ecd	nonadvanced colorectal adenoma	58	male
+Yachida_2019_CRC	SMP_122356c27117f4e10cc8	CTR	67	male
+Yachida_2019_CRC	SMP_f748028af34bf09e4ce7	CTR	62	female
+Yachida_2019_CRC	SMP_82f1d6debd6f4f62adb4	colorectal cancer	66	male
+Yachida_2019_CRC	SMP_8d4a3225e2a487c65f08	colorectal cancer	66	male
+Yachida_2019_CRC	SMP_91016cec22cb566f8f13	colorectal cancer	74	female
+Yachida_2019_CRC	SMP_b841bbec38f722f87051	colorectal cancer	65	male
+Yachida_2019_CRC	SMP_42b0483fab97f583701d	colorectal cancer	48	female
+Yachida_2019_CRC	SMP_a10c9b1a586092adb3f1	colorectal cancer	48	female
+Yachida_2019_CRC	SMP_3cd86f78dd1fab922de6	nonadvanced colorectal adenoma	72	male
+Yachida_2019_CRC	SMP_3c563c8054878dbd3efd	nonadvanced colorectal adenoma	77	male
+Yachida_2019_CRC	SMP_d1207130be94b038b369	CTR	74	male
+Yachida_2019_CRC	SMP_b09f533fc561b1a8caf8	nonadvanced colorectal adenoma	55	male
+Yachida_2019_CRC	SMP_2118f0608ddd1f98072b	CTR	70	female
+Yachida_2019_CRC	SMP_277292ba5b21cafbf0dd	CTR	77	male
+Yachida_2019_CRC	SMP_5d36c7d825f2a4dddfe7	control patient	78	female
+Yachida_2019_CRC	SMP_f24f18a84520d93c39f2	control patient	51	female
+Yachida_2019_CRC	SMP_61640ff1cb47aa0825a0	CTR	60	male
+Yachida_2019_CRC	SMP_55a5537c176f47e6848e	colorectal cancer	62	female
+Yachida_2019_CRC	SMP_f80fb0597d5033696911	nonadvanced colorectal adenoma	58	male
+Yachida_2019_CRC	SMP_c0e05e817fc9189f4850	CTR	55	male
+Yachida_2019_CRC	SMP_5920a1e24f74a2765af7	colorectal cancer	59	male
+Yachida_2019_CRC	SMP_2ac2931e93e921bb1390	colorectal cancer	48	male
+Yachida_2019_CRC	SMP_f6c61dc25d43eb420668	CTR	69	male
+Yachida_2019_CRC	SMP_8c75b1c19255637e2d14	colorectal cancer	67	male
+Yachida_2019_CRC	SMP_66778ef33f8782e8a424	colorectal cancer	46	male
+Yachida_2019_CRC	SMP_ebbf5d62233960e7ea72	colorectal cancer	73	male
+Yachida_2019_CRC	SMP_d5d76444e35e32014dc1	CTR	54	female
+Yachida_2019_CRC	SMP_5eb25516dd18d6bda5e3	CTR	68	female
+Yachida_2019_CRC	SMP_2307ff93c37d0dcb2d50	CTR	37	male
+Yachida_2019_CRC	SMP_64ff675753f644b5aabc	colorectal cancer	61	male
+Yachida_2019_CRC	SMP_ace58c618ff243633362	CTR	46	male
+Yachida_2019_CRC	SMP_02ff4cd5c30686146701	CTR	46	female
+Yachida_2019_CRC	SMP_a91dc1dedb1e3de5b9ed	colorectal cancer	67	male
+Yachida_2019_CRC	SMP_7d175093da2481dbf2f9	colorectal cancer	66	male
+Yachida_2019_CRC	SMP_c9fc3e366a734630b23b	colorectal cancer	74	male
+Yachida_2019_CRC	SMP_d4639961755f393c811a	colorectal cancer	55	male
+Yachida_2019_CRC	SMP_13936f4522a93f65baee	CTR	58	male
+Yachida_2019_CRC	SMP_bfbf5805dd2c51a1902b	colorectal cancer	66	male
+Yachida_2019_CRC	SMP_2625960cacbc8bc79458	CTR	43	female
+Yachida_2019_CRC	SMP_d18596db678c0ef7ae57	colorectal cancer	60	female
+Yachida_2019_CRC	SMP_877f95cc11f8ad56ba8c	CTR	52	male
+Yachida_2019_CRC	SMP_478c5b3531e75dd2042f	colorectal cancer	65	female
+Yachida_2019_CRC	SMP_4def5c0f9cd3709a1a04	colorectal cancer	65	male
+Yachida_2019_CRC	SMP_7af5d44423776cad0f7e	CTR	58	female
+Yachida_2019_CRC	SMP_1d5936ccc2bd0c540cd7	colorectal cancer	58	male
+Yachida_2019_CRC	SMP_d2c90a07b35f94b33ea1	colorectal cancer	75	male
+Yachida_2019_CRC	SMP_a0d4e4f2bd7d035e11f6	colorectal cancer	61	female
+Yachida_2019_CRC	SMP_b6ae9015e6a91e76fd19	colorectal cancer	75	male
+Yachida_2019_CRC	SMP_15735a873e1a2dba322b	colorectal cancer	72	male
+Yachida_2019_CRC	SMP_1c6d7e6ed546c026714a	colorectal cancer	66	male
+Yachida_2019_CRC	SMP_b0581a9873acc23892a6	colorectal cancer	58	female
+Yachida_2019_CRC	SMP_1705aba6116d2c06aeb6	CTR	66	male
+Yachida_2019_CRC	SMP_e987d539120ec63110b6	CTR	73	female
+Yachida_2019_CRC	SMP_fa6cdbfd8e73e43ca300	colorectal cancer	48	male
+Yachida_2019_CRC	SMP_b165871f5eb67a66ad7f	colorectal cancer	73	male
+Yachida_2019_CRC	SMP_7f07ff9e67ee826ad281	colorectal cancer	65	female
+Yachida_2019_CRC	SMP_dbcd939f4ed16255f60e	CTR	61	female
+Yachida_2019_CRC	SMP_bb680b31a36fe0b14b68	colorectal cancer	75	male
+Yachida_2019_CRC	SMP_05a6a9c16d1b650f855f	CTR	71	female
+Yachida_2019_CRC	SMP_8105afcc799fe84b92fb	CTR	48	male
+Yachida_2019_CRC	SMP_5e816cd25ce2e57182c5	control patient	42	female
+Yachida_2019_CRC	SMP_726dd0f06dc03da0dd41	colorectal cancer	72	male
+Yachida_2019_CRC	SMP_9fc9acbd9a4cfb0da7ec	colorectal cancer	63	male
+Yachida_2019_CRC	SMP_19cc83cf61c3d40428d9	colorectal cancer	79	female
+Yachida_2019_CRC	SMP_6bd59618fd53cfe31847	colorectal cancer	44	male
+Yachida_2019_CRC	SMP_c1ad329f145ffca54b36	CTR	44	male
+Yachida_2019_CRC	SMP_64d621097961afc908d9	colorectal cancer	61	male
+Yachida_2019_CRC	SMP_48a05e7b89fcd8c6abc4	colorectal cancer	46	male
+Yachida_2019_CRC	SMP_10c24eaa54174bd89d50	CTR	77	male
+Yachida_2019_CRC	SMP_dbc7838eaa0d74df9256	colorectal cancer	67	male
+Yachida_2019_CRC	SMP_24d0e6ca4c379b146d18	colorectal cancer	62	male
+Yachida_2019_CRC	SMP_027bec4b9b35b0962b72	colorectal cancer	66	female
+Yachida_2019_CRC	SMP_a47140dbf72b797379b7	colorectal cancer	76	male
+Yachida_2019_CRC	SMP_5a35723fce5526ce9d78	CTR	63	female
+Yachida_2019_CRC	SMP_c0f450f632b3e7ded089	colorectal cancer	62	male
+Yachida_2019_CRC	SMP_6a8f53c4981b380605ec	CTR	55	male
+Yachida_2019_CRC	SMP_cdce5b17e442d08de43b	CTR	32	male
+Yachida_2019_CRC	SMP_7ed40614b68f2ad53dd6	CTR	77	male
+Yachida_2019_CRC	SMP_4258d43e9a22f3b7992b	CTR	34	male
+Yachida_2019_CRC	SMP_b96c3be6f8559642f71b	CTR	37	male
+Yachida_2019_CRC	SMP_3a4f525aa6920e8f3893	CTR	68	female
+Yachida_2019_CRC	SMP_89d98a1190062083534a	CTR	51	male
+Yachida_2019_CRC	SMP_ada151983ea092824459	CTR	63	male
+Yachida_2019_CRC	SMP_4b5f13a89f95baebba0b	colorectal cancer	78	female
+Yachida_2019_CRC	SMP_6d230f23ad2f5018e20e	CTR	51	female
+Yachida_2019_CRC	SMP_ae748f9e06d51baa0961	CTR	72	male
+Yachida_2019_CRC	SMP_eb16088bd9ab1b54e42a	colorectal cancer	66	female
+Yachida_2019_CRC	SMP_2b70027a222f4118a592	colorectal cancer	73	male
+Yachida_2019_CRC	SMP_08ae42fcd1c95f8c92a2	colorectal cancer	54	male
+Yachida_2019_CRC	SMP_fc4b5d1dfe03e334b879	CTR	40	male
+Yachida_2019_CRC	SMP_fd4733590ab45b401889	nonadvanced colorectal adenoma	73	female
+Yachida_2019_CRC	SMP_20ad723f76217f07f0d9	CTR	47	male
+Yachida_2019_CRC	SMP_28a05d9de51df43b8681	colorectal cancer	64	male
+Yachida_2019_CRC	SMP_87148d10b2f375b7ce70	CTR	57	male
+Yachida_2019_CRC	SMP_c2352b1ad7f5b378f84e	CTR	54	male
+Yachida_2019_CRC	SMP_1fb47efd90d6b02d7117	CTR	63	male
+Yachida_2019_CRC	SMP_6b3373221b846ecfb41f	nonadvanced colorectal adenoma	70	female
+Yachida_2019_CRC	SMP_fd5292c2b5a45bf4a20b	control patient	70	female
+Yachida_2019_CRC	SMP_ba3aefafd57d6e30eff8	CTR	44	female
+Yachida_2019_CRC	SMP_e1f5b70463d917316ba6	CTR	55	male
+Yachida_2019_CRC	SMP_73286fac5617f7e23589	CTR	55	male
+Yachida_2019_CRC	SMP_f1c5d79f8fb66e22a071	CTR	79	female
+Yachida_2019_CRC	SMP_3ca07f833389290e0748	CTR	38	male
+Yachida_2019_CRC	SMP_c4242c0e9ff8a3b78e2d	nonadvanced colorectal adenoma	41	female
+Yachida_2019_CRC	SMP_89c9cfa6d75083e010cb	CTR	54	female
+Yachida_2019_CRC	SMP_5f16463fb51d44068919	CTR	61	male
+Yachida_2019_CRC	SMP_7811be625406c22df7b1	colorectal cancer	50	male
+Yachida_2019_CRC	SMP_f6685124343109d34410	CTR	55	male
+Yachida_2019_CRC	SMP_f4e3c3b20151723bb395	colorectal cancer	66	male
+Yachida_2019_CRC	SMP_5fa2f0ba9471c002fb51	control patient	65	female
+Yachida_2019_CRC	SMP_c4e4bbb77f0d8f39ec6b	colorectal cancer	51	male
+Yachida_2019_CRC	SMP_897b5450c99e43335cd2	CTR	58	female
+Yachida_2019_CRC	SMP_9af0ee62c4b00b92c24c	CTR	74	male
+Yachida_2019_CRC	SMP_a1e15751cfb6c0130502	colorectal cancer	59	female
+Yachida_2019_CRC	SMP_14062b72c6b2468601da	CTR	64	female
+Yachida_2019_CRC	SMP_b212fa626adfb31ec159	colorectal cancer	61	female
+Yachida_2019_CRC	SMP_b1b2dfb0c49c8911b7d6	colorectal cancer	68	male
+Yachida_2019_CRC	SMP_3466e042f192ae33b023	CTR	40	female
+Yachida_2019_CRC	SMP_b29a102baae1e5245077	CTR	46	female
+Yachida_2019_CRC	SMP_df55df0f6c6a54f9c1e4	CTR	72	male
+Yachida_2019_CRC	SMP_a4b16f95160e50aaf860	CTR	62	female
+Yachida_2019_CRC	SMP_bf5dae567df74b4c7ae7	CTR	47	male
+Yachida_2019_CRC	SMP_ac23227db01b9fad622a	colorectal cancer	71	female
+Yachida_2019_CRC	SMP_65fbd7bbcade6737818b	CTR	47	female
+Yachida_2019_CRC	SMP_438cd8044c96456d08d2	nonadvanced colorectal adenoma	65	male
+Yachida_2019_CRC	SMP_5609b932b37f749e0690	nonadvanced colorectal adenoma	62	male
+Yachida_2019_CRC	SMP_86d6b1effcd40e11914d	CTR	67	female
+Yachida_2019_CRC	SMP_4dfe45e944909405d8af	nonadvanced colorectal adenoma	74	female
+Yachida_2019_CRC	SMP_c6ee6ff23b3039355e83	nonadvanced colorectal adenoma	57	female
+Yachida_2019_CRC	SMP_c505ec2958c67f15cb57	CTR	56	male
+Yachida_2019_CRC	SMP_4f8d90c9e0322c375b55	CTR	72	male
+Yachida_2019_CRC	SMP_f59460c1ee980bed5110	colorectal cancer	73	female
+Yachida_2019_CRC	SMP_71eb5bfc6460bf526afa	CTR	54	male
+Yachida_2019_CRC	SMP_8391f09b2914ccdb2a45	CTR	63	female
+Yachida_2019_CRC	SMP_101952f76bf105da5a2a	CTR	75	male
+Yachida_2019_CRC	SMP_7646af15ab52c2f9ef9d	colorectal cancer	68	female
+Yachida_2019_CRC	SMP_eb28f32fb7086b5872c9	CTR	66	female
+Yachida_2019_CRC	SMP_5f9349475edb6c89d196	CTR	62	female
+Yachida_2019_CRC	SMP_f21d72a01d44604ee2ad	CTR	66	female
+Yachida_2019_CRC	SMP_a5d5fc3d620078490459	CTR	55	male
+Yachida_2019_CRC	SMP_bfe9553ee03a32d0f3b8	colorectal cancer	64	male
+Yachida_2019_CRC	SMP_f8ed07cc36f1e620852a	CTR	69	female
+Yachida_2019_CRC	SMP_48cb2f63a74ccc60fc06	CTR	71	female
+Yachida_2019_CRC	SMP_e15dcc3428a46bd0807f	colorectal cancer	58	male
+Yachida_2019_CRC	SMP_8dbc590a0c77baf75e50	CTR	68	female
+Yachida_2019_CRC	SMP_8e180da57468d6391caa	nonadvanced colorectal adenoma	63	female
+Yachida_2019_CRC	SMP_1ab99c742f60db88381f	nonadvanced colorectal adenoma	64	female
+Yachida_2019_CRC	SMP_60966e1f0c05a04cbdad	colorectal cancer	64	male
+Yachida_2019_CRC	SMP_287ace65f3404dc7275c	nonadvanced colorectal adenoma	72	male
+Yachida_2019_CRC	SMP_2acda696b2737c51b75e	colorectal cancer	69	female
+Yachida_2019_CRC	SMP_9524aeb5aa5b44619c70	CTR	37	male
+Yachida_2019_CRC	SMP_d04603491c6307817779	nonadvanced colorectal adenoma	47	female
+Yachida_2019_CRC	SMP_67a67f88e33a8006b631	CTR	49	female
+Yachida_2019_CRC	SMP_44fde5ab2fc9240325e4	CTR	31	male
+Yachida_2019_CRC	SMP_c0661d101460ed5afd44	CTR	52	female
+Yachida_2019_CRC	SMP_42d2ba097bd4232db7d8	CTR	35	female
+Yachida_2019_CRC	SMP_ccc4a1b234acb2a52f6c	CTR	57	male
+Yachida_2019_CRC	SMP_7f675812471ea840574e	CTR	21	female
+Yachida_2019_CRC	SMP_dea502760b16fc3cbc70	CTR	70	female
+Yachida_2019_CRC	SMP_7e35a45661a7ea6c2af9	CTR	50	male
+Yachida_2019_CRC	SMP_4c86315cf7d4fe799d23	CTR	57	female
+Yachida_2019_CRC	SMP_97234a8155528b2af090	CTR	52	male
+Yachida_2019_CRC	SMP_9ded4868c9bc3caf81a3	nonadvanced colorectal adenoma	67	male
+Yachida_2019_CRC	SMP_eff1d8dd3fba84acf9dd	CTR	51	female
+Yachida_2019_CRC	SMP_4a0e9041df3af14eae6d	CTR	61	female
+Yachida_2019_CRC	SMP_69939ec1b1f570dea0ae	CTR	63	female
+Yachida_2019_CRC	SMP_8818b441a63ff0dfd612	CTR	40	male
+Yachida_2019_CRC	SMP_928bbb74d7a130733284	CTR	70	male
+Yachida_2019_CRC	SMP_1b92bbf7a65c84e21328	CTR	27	male
+Yachida_2019_CRC	SMP_cd85e799c75fac8f9ded	CTR	34	male
+Yachida_2019_CRC	SMP_86db97ad84987cb687b3	CTR	75	female
+Yachida_2019_CRC	SMP_96a9275e8864dc14f05d	colorectal cancer	75	male
+Yachida_2019_CRC	SMP_26c05f7731d7783802a5	CTR	37	male
+Yachida_2019_CRC	SMP_623c8413d06b7420a918	colorectal cancer	72	male
+Yachida_2019_CRC	SMP_86e8474398ab59c2e693	colorectal cancer	49	female
+Yachida_2019_CRC	SMP_a13f7812b90fb67f5204	CTR	52	female
+Yachida_2019_CRC	SMP_f3671fca9cfd214c9cae	CTR	55	female
+Yachida_2019_CRC	SMP_6242ea7d9b490fddcea3	colorectal cancer	71	female
+Yachida_2019_CRC	SMP_ff52101642eb0e993dc1	colorectal cancer	48	female
+Yachida_2019_CRC	SMP_c17abe109a30c5b6fdae	colorectal cancer	43	male
+Yachida_2019_CRC	SMP_808ca3f3fcd52a908d6e	colorectal cancer	60	male
+Yachida_2019_CRC	SMP_f8dcde798dc5d618066e	colorectal cancer	51	male
+Yachida_2019_CRC	SMP_ada7f915015fdff321a5	colorectal cancer	69	male
+Yachida_2019_CRC	SMP_e4ba6859792dcb486461	colorectal cancer	69	male
+Yachida_2019_CRC	SMP_7bbe21e5ee74a4dde0d9	colorectal cancer	76	male
+Yachida_2019_CRC	SMP_19139068647d1d24f423	colorectal cancer	64	female
+Yachida_2019_CRC	SMP_b652b324d32415bdd0f7	CTR	78	male
+Yachida_2019_CRC	SMP_2af55c82cdc3e5b73306	colorectal cancer	64	female
+Yachida_2019_CRC	SMP_d2274c618d6173ba0d49	colorectal cancer	63	female
+Yachida_2019_CRC	SMP_303e4441c444f64487e9	CTR	73	male
+Yachida_2019_CRC	SMP_eaa7190da33d4a31fa87	colorectal cancer	71	male
+Yachida_2019_CRC	SMP_cabe24625ba907ee5f29	colorectal cancer	72	female
+Yachida_2019_CRC	SMP_90727344a9ed34a51004	colorectal cancer	53	male
+Yachida_2019_CRC	SMP_817cdee237c9c142c976	colorectal cancer	64	male
+Yachida_2019_CRC	SMP_5bf92c2996ad29ec509d	colorectal cancer	59	male
+Yachida_2019_CRC	SMP_b50f98b7538a318019c4	colorectal cancer	68	female
+Yachida_2019_CRC	SMP_e9c77f8923570ae0a3f6	colorectal cancer	68	male
+Yachida_2019_CRC	SMP_edaef13c558f45da2b80	colorectal cancer	40	male
+Yachida_2019_CRC	SMP_136bfd4a7aaae1bdc87f	colorectal cancer	58	female
+Yachida_2019_CRC	SMP_ac0ff3a497607675500d	CTR	58	male
+Yachida_2019_CRC	SMP_f2a1ee1888841f95f098	colorectal cancer	57	male
+Yachida_2019_CRC	SMP_528ede1860d95f9305c5	colorectal cancer	61	male
+Yachida_2019_CRC	SMP_f91c7e53dd68ab844af7	CTR	76	female
+Yachida_2019_CRC	SMP_84949323da43198a4938	colorectal cancer	77	female
+Yachida_2019_CRC	SMP_5970ec2e2c8cf380b51d	CTR	70	male
+Yachida_2019_CRC	SMP_5d7c05cc2f1d54e076d3	colorectal cancer	45	male
+Yachida_2019_CRC	SMP_1a2943084fe4faf89e52	colorectal cancer	59	male
+Yachida_2019_CRC	SMP_5927437cc23a91a40482	CTR	41	female
+Yachida_2019_CRC	SMP_dd8e460d206c8da04037	colorectal cancer	67	male
+Yachida_2019_CRC	SMP_55d350754f0f2db13dfa	colorectal cancer	69	male
+Yachida_2019_CRC	SMP_3346b3746cdfd0555a35	colorectal cancer	68	female
+Yachida_2019_CRC	SMP_967ebf2b884167d2c4ad	CTR	62	male
+Yachida_2019_CRC	SMP_ef08878ab84d7a109d25	colorectal cancer	73	female
+Yachida_2019_CRC	SMP_b520ae6cb142bc86eb9d	CTR	51	female
+Yachida_2019_CRC	SMP_3dcd245dc5c8e79ca75a	colorectal cancer	55	male
+Yachida_2019_CRC	SMP_92659a64c20c159b8d78	colorectal cancer	48	female
+Yachida_2019_CRC	SMP_aa844e551c37b1447287	control patient	45	female
+Yachida_2019_CRC	SMP_c897784185095c631e1c	colorectal cancer	59	male
+Yachida_2019_CRC	SMP_e84295b9f7c8d517f1cf	CTR	60	female
+Yachida_2019_CRC	SMP_7392483054a2de120048	colorectal cancer	67	female
+Yachida_2019_CRC	SMP_b6db03c1d249df6ecb29	colorectal cancer	74	female
+Yachida_2019_CRC	SMP_93b708ad2ea352bce028	colorectal cancer	73	male
+Yachida_2019_CRC	SMP_da964aea552ba3770bba	colorectal cancer	46	female
+Yachida_2019_CRC	SMP_087df8b9676a21052df9	CTR	49	female
+Yachida_2019_CRC	SMP_58be3a0948c936d4a3e4	CTR	30	male
+Yachida_2019_CRC	SMP_749c945a7db1617bab96	CTR	56	male
+Yachida_2019_CRC	SMP_683a6290833600099140	CTR	77	female
+Yachida_2019_CRC	SMP_450363881a8e90cecdfe	CTR	64	female
+Yachida_2019_CRC	SMP_3e67e36425fd4724ea29	CTR	43	male
+Yachida_2019_CRC	SMP_de0ef756650d0c5f5036	CTR	55	female
+Yachida_2019_CRC	SMP_718c337ff93907060873	CTR	33	female
+Yachida_2019_CRC	SMP_d37a5308f27f082bc394	CTR	74	female
+Yachida_2019_CRC	SMP_941d68db167fdbb28e97	CTR	46	male
+Yachida_2019_CRC	SMP_cc96c4608a3f53a9abbc	CTR	59	male
+Yachida_2019_CRC	SMP_73215ccc6c04d91ec80c	CTR	65	female
+Yachida_2019_CRC	SMP_49ddc8ffaee7776b2018	CTR	35	male
+Yachida_2019_CRC	SMP_51d60456b91559dd8f12	CTR	38	female
+Yachida_2019_CRC	SMP_358bc5e1ecc53cf4c4d8	CTR	68	male
+Yachida_2019_CRC	SMP_5ac5131bf8bb9d755965	CTR	60	male
+Yachida_2019_CRC	SMP_202e83c4769b19ec914d	CTR	66	male
+Yachida_2019_CRC	SMP_f935df70c02f80054ee4	CTR	72	male
+Yachida_2019_CRC	SMP_4fc5b075d3bdb40b8648	colorectal cancer	47	male
+Yachida_2019_CRC	SMP_b88277269e0434eab5dc	nonadvanced colorectal adenoma	60	male
+Yachida_2019_CRC	SMP_908cab9bff38a2ddcbd1	colorectal cancer	66	male
+Yachida_2019_CRC	SMP_423e29b8495998a58ccb	colorectal cancer	45	male
+Yachida_2019_CRC	SMP_59a7df9fe5c047d2dd4d	colorectal cancer	63	female
+Yachida_2019_CRC	SMP_9749c8857a6b2eb33e10	CTR	75	female
+Yachida_2019_CRC	SMP_b2bc37351c7f3629d2ca	colorectal cancer	68	female
+Yachida_2019_CRC	SMP_780fe9a86fbf845271ad	colorectal cancer	66	male
+Yachida_2019_CRC	SMP_3e126a1ad27617ee1b35	nonadvanced colorectal adenoma	67	female
+Yachida_2019_CRC	SMP_61ee94033ee86b39b797	CTR	55	female
+Yachida_2019_CRC	SMP_4747e6e88dbdd3245261	colorectal cancer	76	male
+Yachida_2019_CRC	SMP_69e5e74a26c553d5c638	colorectal cancer	73	male
+Yachida_2019_CRC	SMP_8c14f4dd51ca8dd9ed1c	colorectal cancer	51	female
+Yachida_2019_CRC	SMP_60ec63980fb7bea12f74	CTR	78	female
+Yachida_2019_CRC	SMP_513d3fc7f0d5f10fd772	colorectal cancer	67	female
+Yachida_2019_CRC	SMP_0749ffa6af2586cffede	colorectal cancer	69	male
+Yachida_2019_CRC	SMP_d4463deaf549261ae5fa	colorectal cancer	52	male
+Yachida_2019_CRC	SMP_4068d1bd96c644ab7581	CTR	50	male
+Yachida_2019_CRC	SMP_f47884d759b2641b2b24	colorectal cancer	63	female
+Yachida_2019_CRC	SMP_d84caf14e2f425198efa	CTR	65	male
+Yachida_2019_CRC	SMP_ce0bf81614daaf273989	colorectal cancer	64	female
+Yachida_2019_CRC	SMP_40b4952adbd9bea23407	colorectal cancer	73	female
+Yachida_2019_CRC	SMP_648621ecd332ae66281c	colorectal cancer	73	male
+Yachida_2019_CRC	SMP_c9eea61ac0dddec994bb	nonadvanced colorectal adenoma	74	female
+Yachida_2019_CRC	SMP_1d26a0955fb622b0548d	nonadvanced colorectal adenoma	78	male
+Yachida_2019_CRC	SMP_d99797935821e9831ed4	colorectal cancer	60	female
+Yachida_2019_CRC	SMP_eaf30762e3edf0cab526	nonadvanced colorectal adenoma	58	male
+Yachida_2019_CRC	SMP_2512a14c1bff8a671864	CTR	61	male
+Yachida_2019_CRC	SMP_8a0204c0fcc2bc9fbb2c	nonadvanced colorectal adenoma	51	male
+Yachida_2019_CRC	SMP_2c3e818720db4de72832	colorectal cancer	71	male
+Yachida_2019_CRC	SMP_2404e5c4e6041b1544d4	colorectal cancer	67	male
+Yachida_2019_CRC	SMP_d226bd938e3687831b62	colorectal cancer	65	male
+Yachida_2019_CRC	SMP_cb641fd747ccb7e18e1c	colorectal cancer	64	male
+Yachida_2019_CRC	SMP_cfafee245dccf8e54d2e	colorectal cancer	60	male
+Yachida_2019_CRC	SMP_ea4df3a19c35c360af9e	CTR	71	male
+Yachida_2019_CRC	SMP_560f56a82084dd058a44	CTR	77	male
+Yachida_2019_CRC	SMP_5ce38f1eedd1641368bb	colorectal cancer	49	male
+Yachida_2019_CRC	SMP_fffd9c0f730a90f3b31d	CTR	78	female
+Yachida_2019_CRC	SMP_0149c6f59a4198e0796b	colorectal cancer	69	male
+Yachida_2019_CRC	SMP_b6c24f40d1f9d9e60c9b	colorectal cancer	49	female
+Yachida_2019_CRC	SMP_218ef9acc7d3ab228ef7	colorectal cancer	69	female
+Yachida_2019_CRC	SMP_07c18ee37ed9f58270f0	colorectal cancer	70	male
+Yachida_2019_CRC	SMP_58f088e2c4037dce66f5	CTR	68	male
+Yachida_2019_CRC	SMP_ded7ebaa85d0974e2e64	CTR	77	female
+Yachida_2019_CRC	SMP_1346a0522edff82b03b0	CTR	60	female
+Yachida_2019_CRC	SMP_fb3704a582cf7c36c3cc	CTR	71	female
+Yachida_2019_CRC	SMP_81a649d70b84df4b0a58	colorectal cancer	61	female
+Yachida_2019_CRC	SMP_9e357fab3551a36dd4d7	nonadvanced colorectal adenoma	67	male
+Yachida_2019_CRC	SMP_08bb1c68c12dd2d9822e	colorectal cancer	57	male
+Yachida_2019_CRC	SMP_788534ea2352374be5ba	CTR	58	female
+Yachida_2019_CRC	SMP_cebdaa0bf9ac0fcd10ac	colorectal cancer	73	female
+Yachida_2019_CRC	SMP_85a506000a7234fdd9af	CTR	62	female
+Yachida_2019_CRC	SMP_3f557598b8bc65c2d3f5	colorectal cancer	62	male
+Yachida_2019_CRC	SMP_925120cafbe513512a78	colorectal cancer	47	male
+Yachida_2019_CRC	SMP_d697da620257655d3e1d	CTR	47	male
+Yachida_2019_CRC	SMP_7ea664caa937d8345890	CTR	42	male
+Yachida_2019_CRC	SMP_138f7f19d8e5f4e4e8a9	colorectal cancer	63	female
+Yachida_2019_CRC	SMP_81a5a4e42fedf31ac4e7	colorectal cancer	73	male
+Yachida_2019_CRC	SMP_406e5a7f8d2a290a009e	CTR	74	male
+Yachida_2019_CRC	SMP_74d96ef5c6fe0b33dc76	nonadvanced colorectal adenoma	69	male
+Yachida_2019_CRC	SMP_c312e60353180da16740	nonadvanced colorectal adenoma	52	male
+Yachida_2019_CRC	SMP_f9b1e623614e8f18ac39	colorectal cancer	73	female
+Yachida_2019_CRC	SMP_975c5d6395b373185d70	colorectal cancer	61	female
+Yachida_2019_CRC	SMP_4f8b422f01cd7b53e637	CTR	76	female
+Yachida_2019_CRC	SMP_6c85e055da577f9c75e6	colorectal cancer	76	male
+Yachida_2019_CRC	SMP_40577ea2f8f733881525	CTR	47	female
+Yachida_2019_CRC	SMP_e80914023d438c180ba5	colorectal cancer	52	male
+Yachida_2019_CRC	SMP_1a28579df577c626e589	colorectal cancer	69	male
+Yachida_2019_CRC	SMP_3f8e41b2f67ba8b0442c	CTR	71	male
+Yachida_2019_CRC	SMP_83107c5112f18d9690ec	colorectal cancer	53	male
+Yachida_2019_CRC	SMP_7e856c24d98b9c5eecad	CTR	68	male
+Yachida_2019_CRC	SMP_1a1f4b1aa35012fd2c95	colorectal cancer	70	male
+Yachida_2019_CRC	SMP_2d7f182a740d90d71b3b	colorectal cancer	59	male
+Yachida_2019_CRC	SMP_c7aac94d268ef8eaf0c2	CTR	71	male
+Yachida_2019_CRC	SMP_eacca86d66f5384f7c4e	CTR	74	male
+Yachida_2019_CRC	SMP_d712a5695ce2dec64eb6	nonadvanced colorectal adenoma	66	male
+Yachida_2019_CRC	SMP_24e17078c2899fd49d24	nonadvanced colorectal adenoma	75	male
+Yachida_2019_CRC	SMP_4a25737219f50c7fe56f	colorectal cancer	63	male
+Yachida_2019_CRC	SMP_4b33cc2557dc2c5caa23	colorectal cancer	69	male
+Yachida_2019_CRC	SMP_b741312614c9d002af19	CTR	52	male
+Yachida_2019_CRC	SMP_af15c646fb345f9fa172	nonadvanced colorectal adenoma	73	male
+Yachida_2019_CRC	SMP_26761bd08c2823365ee9	nonadvanced colorectal adenoma	74	male
+Yachida_2019_CRC	SMP_e09833b054e6e740822d	CTR	78	male
+Yachida_2019_CRC	SMP_c02c4f44075161aa2dc2	nonadvanced colorectal adenoma	72	male
+Yachida_2019_CRC	SMP_11bcd0066ea9679c6f3f	CTR	77	female
+Yachida_2019_CRC	SMP_eba207dcc580d2fd620e	CTR	59	female
+Yachida_2019_CRC	SMP_6fea9bf4fceddfc70bfc	colorectal cancer	50	male
+Yachida_2019_CRC	SMP_7e1c302c81179a066023	colorectal cancer	68	male
+Yachida_2019_CRC	SMP_a4a4921b248c2060a8cc	CTR	51	male
+Yachida_2019_CRC	SMP_04d116a266020c4ac39f	CTR	54	male
+Yachida_2019_CRC	SMP_0c42ad9752484eb0fa09	colorectal cancer	65	male
+Yachida_2019_CRC	SMP_eb21ce1bfcd44d95df99	colorectal cancer	60	male
+Yachida_2019_CRC	SMP_7682c750911df27c255c	colorectal cancer	71	female
+Yachida_2019_CRC	SMP_b41df00d93ee16e741d3	CTR	55	male
+Yachida_2019_CRC	SMP_0d5cedc943cfe4561104	colorectal cancer	66	female
+Yachida_2019_CRC	SMP_cb11e1468c9751c5a758	nonadvanced colorectal adenoma	71	male
+Yachida_2019_CRC	SMP_49ec1bdf6d04d5c3f194	colorectal cancer	74	female
+Yachida_2019_CRC	SMP_fe81af32bddebe4d9074	CTR	41	female
+Yachida_2019_CRC	SMP_a30a22cd7e1e2a72b306	nonadvanced colorectal adenoma	58	male
+Yachida_2019_CRC	SMP_cc8296bd8221b1ddfb13	colorectal cancer	72	male
+Yachida_2019_CRC	SMP_f3e4566c42d63277d3a7	nonadvanced colorectal adenoma	72	female
+Yachida_2019_CRC	SMP_7e440cf0c9ccf86ddbc4	CTR	78	male
+Yachida_2019_CRC	SMP_936ffe728525aa17568e	nonadvanced colorectal adenoma	73	male
+Yachida_2019_CRC	SMP_e1d5c748a882e4bd56a7	colorectal cancer	51	male
+Yachida_2019_CRC	SMP_529f1fae1f8753b7431f	colorectal cancer	65	female
+Yachida_2019_CRC	SMP_cb7ca4fe7d2648fa6f34	CTR	67	male
+Yachida_2019_CRC	SMP_bc382e90ce58be2ecfaf	CTR	61	male
+Yachida_2019_CRC	SMP_13eeac0607b0521d3d63	nonadvanced colorectal adenoma	59	male
+Yachida_2019_CRC	SMP_ac41a0fbe9d79cebf2fb	nonadvanced colorectal adenoma	65	male
+Yachida_2019_CRC	SMP_4e81f9f24e913909cac2	nonadvanced colorectal adenoma	64	male
+Yachida_2019_CRC	SMP_0ccd2353dd0ce9a80cc0	CTR	61	female
+Yachida_2019_CRC	SMP_26b9afcfa407be0a72f8	colorectal cancer	51	male
+Yachida_2019_CRC	SMP_26f0239be96bcc670a6e	CTR	66	female
+Yachida_2019_CRC	SMP_08f11cae1c3f8e35a460	colorectal cancer	75	female
+Yachida_2019_CRC	SMP_af68825aeef28d73c649	CTR	62	female
+Yachida_2019_CRC	SMP_da67a3f45968832a9990	CTR	57	male
+Yachida_2019_CRC	SMP_be0bf29e72490890dfca	colorectal cancer	70	female
+Yachida_2019_CRC	SMP_e3de62e1b186221534a1	CTR	73	male
+Yachida_2019_CRC	SMP_443e0d66adde2c05f761	colorectal cancer	71	male
+Yachida_2019_CRC	SMP_49de50448d8251e2f9d9	colorectal cancer	47	male
+Yachida_2019_CRC	SMP_10f9ca80034ee15c8715	colorectal cancer	66	male
+Yachida_2019_CRC	SMP_2fa3cc374c5de010b19a	CTR	68	female
+Yachida_2019_CRC	SMP_ddea5bacde7a4cff7cce	CTR	74	female
+Yachida_2019_CRC	SMP_5bc54f82468ce4d2a287	colorectal cancer	64	male
+Yachida_2019_CRC	SMP_f902559f582ef828ef09	CTR	74	male
+Yachida_2019_CRC	SMP_78663032a4f6db561dcb	colorectal cancer	65	male
+Yachida_2019_CRC	SMP_41d17a4a52438e2bde7a	nonadvanced colorectal adenoma	59	male
+Yachida_2019_CRC	SMP_1b781c6d475fe148c258	CTR	63	male
+Yachida_2019_CRC	SMP_9659455cc5275c866b90	CTR	60	male
+Yachida_2019_CRC	SMP_f511c51d30f4585a3bfc	nonadvanced colorectal adenoma	70	male
+Yachida_2019_CRC	SMP_0f72ebdc0cf074bcfee5	colorectal cancer	77	male
+Yachida_2019_CRC	SMP_9b39b262dc95a83871d4	colorectal cancer	67	female
+Yachida_2019_CRC	SMP_e61f42f6c3ce6df2b9b3	colorectal cancer	74	male
+Yachida_2019_CRC	SMP_a2fa0117f6da58a404f0	colorectal cancer	69	male
+Yachida_2019_CRC	SMP_4736073f6b39f3d093af	CTR	61	female
+Yachida_2019_CRC	SMP_b086c75d7b884f4b2274	CTR	54	female
+Yachida_2019_CRC	SMP_2d0cc442be9d993e8f2a	CTR	54	female
+Yachida_2019_CRC	SMP_f39f7455f73108f27ca3	CTR	74	female
+Yachida_2019_CRC	SMP_97d34706b2338bb41ea3	colorectal cancer	78	male
+Yachida_2019_CRC	SMP_3c00c1a54389c2a51f99	colorectal cancer	70	female
+Yachida_2019_CRC	SMP_4b2e575fc75e451264cc	nonadvanced colorectal adenoma	74	male
+Yachida_2019_CRC	SMP_5d80fb55acbc8ab2461a	colorectal cancer	73	male
+Yachida_2019_CRC	SMP_5e77e6704ad4bb35cb70	CTR	75	female
+Yachida_2019_CRC	SMP_414940b436e8464d1136	colorectal cancer	58	male
+Yachida_2019_CRC	SMP_aa3f05e9e614a0132d10	CTR	71	male
+Yachida_2019_CRC	SMP_423e468be08b6ecf1eb8	colorectal cancer	56	female
+Yachida_2019_CRC	SMP_027e8535b27b05f924eb	colorectal cancer	69	male
+Yachida_2019_CRC	SMP_e7ae1779d65cb5f82d74	colorectal cancer	52	male
+Yachida_2019_CRC	SMP_eec6b502291395096fbe	CTR	69	male
+Yachida_2019_CRC	SMP_b99ee047cb08b0854587	colorectal cancer	65	female
+Yachida_2019_CRC	SMP_e72a5bca1426961c7941	colorectal cancer	63	female
+Yachida_2019_CRC	SMP_24258b16468eed469351	colorectal cancer	49	male
+Yachida_2019_CRC	SMP_da13e5a4cda8da1484ea	colorectal cancer	63	male
+Yachida_2019_CRC	SMP_7f477a21f6f04f896c9a	colorectal cancer	39	male
+Yachida_2019_CRC	SMP_20accf600985eb494770	colorectal cancer	67	female
+Yachida_2019_CRC	SMP_13bf3c9393b68919fed9	nonadvanced colorectal adenoma	63	male
+Yachida_2019_CRC	SMP_789f71792ce6eae084f3	colorectal cancer	69	female
+Yachida_2019_CRC	SMP_1d8fbda7bf070df58651	colorectal cancer	50	male
+Yachida_2019_CRC	SMP_bf5e1ded8c242e835faf	CTR	73	female
+Yachida_2019_CRC	SMP_da9682d78703f965a020	colorectal cancer	73	female
+Yachida_2019_CRC	SMP_3386d883c18485f67b8e	nonadvanced colorectal adenoma	52	male
+Yachida_2019_CRC	SMP_b5946925ce685b379715	nonadvanced colorectal adenoma	60	male
+Yachida_2019_CRC	SMP_882094d69c8ec375c6e9	CTR	69	male
+Yachida_2019_CRC	SMP_f0b4470d81fc7fa5b649	colorectal cancer	64	male
+Yachida_2019_CRC	SMP_f87a3b71352501f2916d	colorectal cancer	55	male
+Yachida_2019_CRC	SMP_bdb855a694cb7b23d077	colorectal cancer	53	male
+Yachida_2019_CRC	SMP_162027826ac6a030b8a1	nonadvanced colorectal adenoma	53	male
+Yachida_2019_CRC	SMP_b62e76729e0115cce37f	nonadvanced colorectal adenoma	58	male
+Yachida_2019_CRC	SMP_20b4efdeb1bc475845e1	colorectal cancer	64	male
+Yachida_2019_CRC	SMP_6428c9efe568de955051	CTR	76	male
+Yachida_2019_CRC	SMP_8b318f97af411cc3d992	colorectal cancer	68	male
+Yachida_2019_CRC	SMP_c304bfbebd4043bc17e7	CTR	46	female
+Yachida_2019_CRC	SMP_ece9ece7477ca489a00e	colorectal cancer	47	female
+Yachida_2019_CRC	SMP_b67573d29e48fff266e9	colorectal cancer	77	male
+Yachida_2019_CRC	SMP_6a780e90fd320f7227bf	CTR	70	male
+Yachida_2019_CRC	SMP_ed998db5a3a06e1811b1	nonadvanced colorectal adenoma	69	male
+Yachida_2019_CRC	SMP_d72e4126dfdbd0210721	colorectal cancer	72	male
+Yachida_2019_CRC	SMP_6fc9a6c24eb0e19a3a10	colorectal cancer	60	male
+Yachida_2019_CRC	SMP_4d1d69ff9d7481f703f5	colorectal cancer	73	male
+Yachida_2019_CRC	SMP_998e224ed88895abb74b	colorectal cancer	60	male
+Yachida_2019_CRC	SMP_e07608dfc39da4140b69	nonadvanced colorectal adenoma	63	male
+Yachida_2019_CRC	SMP_abd82f5ada00edce6984	colorectal cancer	59	female
+Yachida_2019_CRC	SMP_d2cefda8a2f03e60691f	colorectal cancer	59	male
+Yachida_2019_CRC	SMP_a912923a713bf97b9208	colorectal cancer	61	female
+Yachida_2019_CRC	SMP_e3e0d7b6d00b46d881af	colorectal cancer	62	female
+Yachida_2019_CRC	SMP_cac47b1565604087667d	nonadvanced colorectal adenoma	66	female
+Yachida_2019_CRC	SMP_5c2760588d987365a0a1	nonadvanced colorectal adenoma	48	male
+Yachida_2019_CRC	SMP_796b179a778eb978a204	CTR	65	female
+Yachida_2019_CRC	SMP_a8bb88936493dd983e06	colorectal cancer	52	male
+Yachida_2019_CRC	SMP_1073683399b312cf7037	CTR	64	female
+Yachida_2019_CRC	SMP_422e64615fa61a4a5076	colorectal cancer	56	female
+Yachida_2019_CRC	SMP_c870510031fa63666394	CTR	77	male
+Yachida_2019_CRC	SMP_3c21e9b16f83ceaebc34	colorectal cancer	54	female
+Yachida_2019_CRC	SMP_dd197966d72ce8fc3af1	CTR	65	male
+Yachida_2019_CRC	SMP_ebbf4b594b24fbfe4011	CTR	70	male
+Yachida_2019_CRC	SMP_616051b1579e0f3ee320	CTR	70	male
+Yachida_2019_CRC	SMP_6aca982d369480bda6d7	colorectal cancer	76	female
+Yachida_2019_CRC	SMP_90fe2eca102e4f6cfcc9	CTR	49	female
+Yachida_2019_CRC	SMP_1197ae9c6cb4814dd9da	nonadvanced colorectal adenoma	64	female
+Yachida_2019_CRC	SMP_a1ff0e5bce93320c6ef2	nonadvanced colorectal adenoma	58	female
+Yachida_2019_CRC	SMP_c9b09a2a08ed2d083a25	CTR	62	female
+Yachida_2019_CRC	SMP_3465c5abad60b960bbee	nonadvanced colorectal adenoma	64	male
+Yachida_2019_CRC	SMP_24c89fdf04b1ed9eb774	CTR	67	female
+Yachida_2019_CRC	SMP_697a87c48b98fcf35cca	CTR	69	male
+Yachida_2019_CRC	SMP_e7d99b8b1a014a73040a	nonadvanced colorectal adenoma	70	female
+Yachida_2019_CRC	SMP_ab5923e21012ab6ae1ab	CTR	76	female
+Yachida_2019_CRC	SMP_460387af9288d5445286	CTR	68	male
+Yachida_2019_CRC	SMP_b4be0e7fd802d321db10	CTR	69	female
+Yachida_2019_CRC	SMP_e3123a4a6869db097076	CTR	62	female
+Yachida_2019_CRC	SMP_f7317045e7d8d0ce4f3e	nonadvanced colorectal adenoma	59	female
+Yachida_2019_CRC	SMP_e2aad5d2b67f6941503c	CTR	66	female
+Yachida_2019_CRC	SMP_2e7e5dbc51266953daba	CTR	72	female
+Yachida_2019_CRC	SMP_538c7b1758efe105c6e0	nonadvanced colorectal adenoma	54	male
+Yachida_2019_CRC	SMP_380e3a6062c749f8e454	CTR	76	male
+Yachida_2019_CRC	SMP_37053eaf6a25d1025f03	CTR	45	female
+Yachida_2019_CRC	SMP_55fa14be1eb4da930685	CTR	66	male
+Yachida_2019_CRC	SMP_58b81a2b5bc4d8fee128	colorectal cancer	72	male
+Yachida_2019_CRC	SMP_097819a543a5376fb36b	colorectal cancer	57	female
+Yachida_2019_CRC	SMP_871bdfcf2b8a6a6fd9a8	colorectal cancer	71	male
+Yachida_2019_CRC	SMP_1d93dff88541c965287d	colorectal cancer	73	female
+Yachida_2019_CRC	SMP_083c64e048bc81491937	CTR	74	male
+Yachida_2019_CRC	SMP_0df1494f82437e63ef15	colorectal cancer	57	male
+Yachida_2019_CRC	SMP_b3ddbf4da0d3b1e67f4e	CTR	65	male
+Yachida_2019_CRC	SMP_f4888043d01bb73f6274	CTR	66	female
+Yachida_2019_CRC	SMP_9a58e9b49ead34d2d3d1	CTR	66	female
+Yachida_2019_CRC	SMP_c62bf0d1399c98134dad	CTR	59	male
+Yachida_2019_CRC	SMP_13656fe419b55826326d	CTR	65	male
+Yachida_2019_CRC	SMP_0360df4a97a74c004188	colorectal cancer	73	male
+Yachida_2019_CRC	SMP_77fefb9a98773a2ffe85	nonadvanced colorectal adenoma	41	female
+Yachida_2019_CRC	SMP_cd81f3fdf533db4c5894	CTR	40	male
+Yachida_2019_CRC	SMP_3cdde12dee5edbfee1a2	colorectal cancer	71	female
+Yachida_2019_CRC	SMP_6398d628912ededbaba1	CTR	67	female
+Yachida_2019_CRC	SMP_28f99f6439f4a2a23475	colorectal cancer	61	male
+Yachida_2019_CRC	SMP_5c8b09b9dfc8a127f906	colorectal cancer	64	female
+Yachida_2019_CRC	SMP_6ecb6784fa48631196de	colorectal cancer	65	male
+Yachida_2019_CRC	SMP_14fd6c2724f0fdcc7e9c	colorectal cancer	70	female
+Yachida_2019_CRC	SMP_5aa525ea5f0dfff74657	CTR	79	female
+Yachida_2019_CRC	SMP_bb73fc43dbf8ee39cbac	CTR	70	male
+Yachida_2019_CRC	SMP_f6ccb94d7d773086b796	colorectal cancer	62	female
+Yachida_2019_CRC	SMP_8bb7cf1177389810e195	control patient	40	female
+Yachida_2019_CRC	SMP_c581490550b678891c67	control patient	38	female
+Yachida_2019_CRC	SMP_1a8635ac9a4c751c2d2e	control patient	41	female
+Yachida_2019_CRC	SMP_2f5dee3b54d455aff364	control patient	74	female
+Yachida_2019_CRC	SMP_3432a6d818fd1f396226	control patient	67	female
+Yachida_2019_CRC	SMP_321d714331bf6311a26e	control patient	42	female
+Yachida_2019_CRC	SMP_4562c5cd2a9f24cbf640	control patient	50	female
+Yachida_2019_CRC	SMP_a34564f148c6ac7ec542	control patient	55	male
+Yachida_2019_CRC	SMP_3975978d12b8ebf306f5	control patient	70	female
+Yachida_2019_CRC	SMP_043eb48cbadc6fca7c46	control patient	55	female
+Yachida_2019_CRC	SMP_57fc5bca7ab3150254fc	control patient	64	female
+Yachida_2019_CRC	SMP_d10334a8f149d2e3f01c	control patient	70	male
+Yachida_2019_CRC	SMP_9f9a7c4af46864faacaa	control patient	69	male
+Yachida_2019_CRC	SMP_314c694e0449a8066462	control patient	38	male
+Yachida_2019_CRC	SMP_4cd457985522ff2af5f8	control patient	72	female
+Yachida_2019_CRC	SMP_a4aea41e13ffb916d4e3	control patient	72	male
+Yachida_2019_CRC	SMP_3094990ed4e6984eff86	control patient	77	male
+Yachida_2019_CRC	SMP_3384d22e8ff8f305690a	control patient	57	male
+Yachida_2019_CRC	SMP_b2e471505858a580deb9	control patient	57	female
+Yachida_2019_CRC	SMP_ddd90e9f54ef412f51c2	control patient	68	male
+Yachida_2019_CRC	SMP_803989aeff09c016a955	control patient	64	female
+Yachida_2019_CRC	SMP_02d0177cd37b1c866827	control patient	65	female
+Yachida_2019_CRC	SMP_a66468a312513af3b9a3	control patient	62	female
+Yachida_2019_CRC	SMP_b8e8769892a03d7a890f	control patient	49	male
+Yachida_2019_CRC	SMP_473e0418155b31dd42d8	control patient	73	male
+Yachida_2019_CRC	SMP_93cc64db7f620646bb18	control patient	69	male
+Yachida_2019_CRC	SMP_b02cdac930f66667bffe	control patient	68	female
+Yachida_2019_CRC	SMP_eb6a0cf1d748836d843c	control patient	70	female
+Yachida_2019_CRC	SMP_c8d032072500e42c7ee1	control patient	56	male
+Yachida_2019_CRC	SMP_8e36f836fa43f67203c9	control patient	69	male
+Yachida_2019_CRC	SMP_40dea30225329925e94d	colorectal cancer	47	male
+Yachida_2019_CRC	SMP_287724f41f2bfd2f1b4d	colorectal cancer	51	female
+Yachida_2019_CRC	SMP_a80bb02f367b351bab55	colorectal cancer	52	male
+Yachida_2019_CRC	SMP_c195a6c63122b7ec0583	colorectal cancer	64	male
+Yachida_2019_CRC	SMP_c2b91d8c9525d6930134	colorectal cancer	61	female
+Yachida_2019_CRC	SMP_b4efabf03dfa8208bd6e	colorectal cancer	53	male
+Yachida_2019_CRC	SMP_6175b095beb365732063	colorectal cancer	64	female
+Yachida_2019_CRC	SMP_c009a37c2a265eb65e82	colorectal cancer	62	female
+Yachida_2019_CRC	SMP_7acbc99e34d257befb66	colorectal cancer	69	male
+Yachida_2019_CRC	SMP_a0ee1f2bce90a1d16acf	colorectal cancer	69	female
+Yachida_2019_CRC	SMP_41a8ff2f074d9d245495	colorectal cancer	45	male
+Yachida_2019_CRC	SMP_7c0b4f6d991669681b8d	colorectal cancer	68	female
+Yachida_2019_CRC	SMP_807ea139a015ae6b7fe9	colorectal cancer	60	female
+Yachida_2019_CRC	SMP_8dcf929ffec3d6dd15d9	colorectal cancer	65	male
+Yachida_2019_CRC	SMP_a9f6a9fd289e2bcd7ae5	colorectal cancer	69	female
+Yachida_2019_CRC	SMP_80d3fdee654fc18df84d	colorectal cancer	65	female
+Yachida_2019_CRC	SMP_923c96f75fb43200d769	colorectal cancer	70	female
+Yachida_2019_CRC	SMP_66bcbd0561190de98bfb	colorectal cancer	62	female
+Yachida_2019_CRC	SMP_425fa23ed32c3bff37be	colorectal cancer	49	female
+Yachida_2019_CRC	SMP_ae403a1a646a27944856	colorectal cancer	44	female
+Yachida_2019_CRC	SMP_51d599a3064d9a43c472	colorectal cancer	63	female
+Yachida_2019_CRC	SMP_5a7e0602f4e3a1a2fb49	colorectal cancer	60	male
+Yachida_2019_CRC	SMP_2c2f84bdc59a5c98c9a8	colorectal cancer	55	male
+Yachida_2019_CRC	SMP_47f9a0252042093c786c	colorectal cancer	51	male
+Yachida_2019_CRC	SMP_32399ab61bebaecdaebd	colorectal cancer	67	female
+Yachida_2019_CRC	SMP_47d33be0e773902fbbd8	CTR	56	male
+Yachida_2019_CRC	SMP_95ddf5cc67749369f262	CTR	68	female

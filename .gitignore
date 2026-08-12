@@ -34,6 +34,10 @@
 # Keep small publication templates
 !metadata/example_sample_metadata.tsv
 
+# Keep the Figure 1 ML reproducibility tables. Generated figures remain
+# ignored by the global image rules below.
+!analyses/figure1_ml/**/*.tsv
+
 # Logs, jobs, and temporary output
 *.log
 *.out

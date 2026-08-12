@@ -20,6 +20,9 @@ crc-metagenome-mag-pipeline/
 │   └── example_config.yaml
 ├── metadata/
 │   └── example_sample_metadata.tsv
+├── analyses/
+│   └── figure1_ml/
+│       └── de-identified inputs, analysis code, and reference tables
 ├── scripts/
 │   ├── 01_... to 42_...
 │   └── plotting/
@@ -43,19 +46,28 @@ crc-metagenome-mag-pipeline/
   and functional evidence.
 - A Conda environment specification for the shared Python, R, and command-line
   dependencies.
+- A self-contained [Figure 1 ML reproducibility package](analyses/figure1_ml/README.md)
+  with minimized pseudonymized inputs, aggregate reference tables, provenance,
+  and integrity checks.
 
 ## Data Availability and Repository Scope
 
-This repository distributes source code, configuration templates, and a
-synthetic plotting-data generator. Study sequencing data and derived
-participant-level results are not bundled with the code.
+This repository distributes source code, configuration templates, a synthetic
+plotting-data generator, and a Figure 1 ML reproducibility package containing
+minimized pseudonymized metadata and species-level relative-abundance inputs
+required for its documented offline analyses.
 
 - Study inputs should be obtained through the repositories, accession records,
-  and data-access routes reported in the accompanying manuscript.
+  and data-access routes reported in the accompanying manuscript unless they
+  are explicitly inventoried under `analyses/figure1_ml/`.
+- The Figure 1 ML inputs use release-only pseudonyms and exclude source sample
+  identifiers, coordinates, dates, free-text descriptions, medication fields,
+  and identifier crosswalks. Their residual linkage risk and license terms are
+  documented within that package.
 - GTDB, host-filtering, and other reference databases must be downloaded from
   their respective providers under the applicable terms.
-- Large intermediate files, trained-model outputs, and generated figures should
-  be stored outside the Git repository.
+- Raw sequencing data, large intermediate files, trained-model outputs, and
+  generated figures should be stored outside the Git repository.
 - Filesystem locations are expressed as `/path/to/...` placeholders and must be
   configured for the user's compute environment.
 

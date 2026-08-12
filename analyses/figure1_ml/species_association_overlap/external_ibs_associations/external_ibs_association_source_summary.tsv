@@ -1,0 +1,4 @@
+source_study	rows_total	species_total	eligible_q_le_0p10_abs_lfc_ge_0p5	up_eligible	down_eligible	case_samples	control_samples
+Goll_2020_FMT_IBS	578	578	225	162	63	31	17
+PRJEB34103_IBS	68	68	61	40	21	63	34
+combined	646	637	285	202	84	31	17
