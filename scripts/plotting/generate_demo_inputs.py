@@ -236,10 +236,32 @@ def r_plot_inputs(output_dir: Path, rng: np.random.Generator) -> None:
             "group": ["Guild A"] * 6 + ["Guild B"] * 6,
             "order": ["Bacteroidales"] * 3 + ["Lachnospirales"] * 3 + ["Oscillospirales"] * 3 + ["Other"] * 3,
             "status": ["Cultured", "Uncultured"] * 6,
-            "score": rng.uniform(0.1, 1.0, len(tips)),
+            "global_rank_score": rng.uniform(0.1, 1.0, len(tips)),
         }
     )
     write_table(annotation, output_dir / "tree_annotation.tsv")
+    write_table(pd.DataFrame({"tip_id": tips}), output_dir / "tree_tips.tsv")
+
+    candidate_features = [f"demo_{index:03d}" for index in range(1, 19)]
+    importance_records = []
+    for cohort_index, cohort in enumerate(("Cohort A", "Cohort B", "Cohort C")):
+        values = np.round(rng.uniform(0.0, 0.2, len(candidate_features)), 2)
+        values[(np.arange(len(candidate_features)) + cohort_index) % 7 == 0] = 0.0
+        for feature_id, value in zip(candidate_features, values):
+            importance_records.append(
+                {
+                    "feature_id": feature_id,
+                    "cohort": cohort,
+                    "mean_importance": float(value),
+                }
+            )
+    write_table(pd.DataFrame(importance_records), output_dir / "cohort_feature_importance.tsv")
+
+    module_records = []
+    for module in ("Module A", "Module B", "Module C"):
+        for tip_id, score in zip(tips, rng.uniform(0.0, 1.0, len(tips))):
+            module_records.append({"tip_id": tip_id, "module": module, "score": float(score)})
+    write_table(pd.DataFrame(module_records), output_dir / "tree_modules.tsv")
 
     distributions = []
     for cohort_index, cohort in enumerate(("Cohort A", "Cohort B", "Cohort C")):

@@ -90,17 +90,46 @@ python scripts/plotting/plot_performance_matrix_example.py \
 
 ### Annotated phylogeny
 
-The annotation table requires `tip_id`, `group`, `order`, binary `status`
-(`Cultured` or `Uncultured`), and a `score` in `[0, 1]`. Every Newick tip must
-have exactly one annotation row. Status is shown as a translucent sector behind
-the tree; group, order, and score are shown as successive annotation rings.
+The base annotation table requires `tip_id`, `group`, `order`, binary `status`
+(`Cultured` or `Uncultured`), and `global_rank_score` in `[0, 1]`. The legacy
+column name `score` remains accepted as an alias for `global_rank_score`. Every
+Newick tip must have exactly one annotation row.
+
+The optional cohort-evidence ring is built from a complete candidate-feature by
+cohort importance matrix. The importance table requires `feature_id`, `cohort`,
+and finite, non-negative `mean_importance`; the tree-node table requires unique
+`tip_id` values. Within each cohort, minimum ranks are converted to
+`(rank_min - 1) / (N - 1)` over the full candidate universe, with zero raw
+importance forced to zero. Cohorts are then averaged with equal weight. The
+builder writes both a tip-level summary and the complete long-form audit table.
+
+```bash
+python scripts/plotting/build_cohort_evidence_example.py \
+  --importance-input /tmp/crc-mag-plotting-demo/inputs/cohort_feature_importance.tsv \
+  --tips-input /tmp/crc-mag-plotting-demo/inputs/tree_tips.tsv \
+  --summary-output /tmp/crc-mag-plotting-demo/inputs/cohort_evidence_summary.tsv \
+  --audit-output /tmp/crc-mag-plotting-demo/inputs/cohort_evidence_audit.tsv
+```
+
+An optional functional-module table uses long-form `tip_id`, `module`, and
+`score` columns. It must contain one row for every tree-tip/module combination;
+the number of modules is determined from the input. Status is drawn as a
+translucent sector behind the tree. Rings proceed from inner to outer as group,
+order, global ML rank, optional cohort ML evidence, and optional functional
+modules (in first-appearance order).
 
 ```bash
 Rscript scripts/plotting/plot_annotated_phylogeny_example.R \
   --tree /tmp/crc-mag-plotting-demo/inputs/demo_tree.nwk \
   --annotation /tmp/crc-mag-plotting-demo/inputs/tree_annotation.tsv \
+  --cohort-evidence /tmp/crc-mag-plotting-demo/inputs/cohort_evidence_summary.tsv \
+  --module-input /tmp/crc-mag-plotting-demo/inputs/tree_modules.tsv \
   --output-prefix /tmp/crc-mag-plotting-demo/figures/annotated_phylogeny
 ```
+
+Omit `--cohort-evidence` and/or `--module-input` when those rings are not
+available. The cohort count and candidate-universe size are read from the
+precomputed evidence table rather than fixed in the plotting code.
 
 ### Cultured fraction by bacterial order
 
