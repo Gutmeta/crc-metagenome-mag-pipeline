@@ -1,0 +1,9 @@
+study	type	url	local_file	status	bytes
+Xu_2022_CRC_adenoma	metadata_all_wide	https://metalog.embl.de/api/study/Xu_2022_CRC_adenoma/metadata/human/all.wide.tsv	CRA/Xu_2022_CRC_adenoma/metadata_all_wide.tsv	downloaded	120850
+Lee_2023_CRC	metadata_all_wide	https://metalog.embl.de/api/study/Lee_2023_CRC/metadata/human/all.wide.tsv	CRA/Lee_2023_CRC/metadata_all_wide.tsv	downloaded	432344
+Lee_2023_CRC	profile	https://metalog.embl.de/static/download/profiles/by_study/metaphlan4_species_Lee_2023_CRC_latest.tsv.gz	CRA/Lee_2023_CRC/metaphlan4_species_Lee_2023_CRC_latest.tsv.gz	downloaded	1843440
+Han_2022_CRC_adenoma	metadata_all_wide	https://metalog.embl.de/api/study/Han_2022_CRC_adenoma/metadata/human/all.wide.tsv	CRA/Han_2022_CRC_adenoma/metadata_all_wide.tsv	downloaded	25644
+Liang_2020_adenomatous_polyps	metadata_all_wide	https://metalog.embl.de/api/study/Liang_2020_adenomatous_polyps/metadata/human/all.wide.tsv	CRA/Liang_2020_adenomatous_polyps/metadata_all_wide.tsv	downloaded	19209
+Liang_2020_adenomatous_polyps	profile	https://metalog.embl.de/static/download/profiles/by_study/metaphlan4_species_Liang_2020_adenomatous_polyps_latest.tsv.gz	CRA/Liang_2020_adenomatous_polyps/metaphlan4_species_Liang_2020_adenomatous_polyps_latest.tsv.gz	downloaded	54555
+Feng_2015_CRC_Austria	metadata_all_wide	https://metalog.embl.de/api/study/Feng_2015_CRC_Austria/metadata/human/all.wide.tsv	CRA/Feng_2015_CRC_Austria/metadata_all_wide.tsv	downloaded	112666
+Feng_2015_CRC_Austria	profile	https://metalog.embl.de/static/download/profiles/by_study/metaphlan4_species_Feng_2015_CRC_Austria_latest.tsv.gz	CRA/Feng_2015_CRC_Austria/metaphlan4_species_Feng_2015_CRC_Austria_latest.tsv.gz	downloaded	359068

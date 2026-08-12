@@ -1,0 +1,10 @@
+# Generated figures and local execution state
+*.png
+*.pdf
+__pycache__/
+*.py[cod]
+.venv/
+
+# Temporary plotting/configuration state
+.cache/
+.matplotlib/

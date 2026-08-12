@@ -1,0 +1,44 @@
+disease	study_code	directory	has_metadata_all_wide	subject_disease_status_counts	available_profiles	unavailable_profiles
+CRA	Different_Characteristics_in_Gut_Microbiome_between_Advanced_Adenoma_Patients_and_Colorectal_Cancer_Patients_by_Metagenomic_Analysis	CRA/Different_Characteristics_in_Gut_Microbiome_between_Advanced_Adenoma_Patients_and_Colorectal_Cancer_Patients_by_Metagenomic_Analysis	no			metaphlan4_species
+CRA	Feng_2015_CRC_Austria	CRA/Feng_2015_CRC_Austria	yes	CTR:63; advanced colorectal adenoma:47; colorectal cancer:46	metaphlan4_species	
+CRA	Han_2022_CRC_adenoma	CRA/Han_2022_CRC_adenoma	yes	adenoma:26; colorectal cancer:26		metaphlan4_species
+CRA	Lee_2023_CRC	CRA/Lee_2023_CRC	yes	CTR:552; sessile serrated adenoma:98; tubular adenoma of the colon:321	metaphlan4_species	
+CRA	Liang_2020_adenomatous_polyps	CRA/Liang_2020_adenomatous_polyps	yes	familial adenomatous polyposis:35	metaphlan4_species	
+CRA	Xu_2022_CRC_adenoma	CRA/Xu_2022_CRC_adenoma	yes	CTR:99; Carcinoma in situ of stomach:33; adenoma:61; colorectal cancer:30		metaphlan4_species
+CRC	Feng_2015_CRC_Austria	CRC/Feng_2015_CRC_Austria	yes	CTR:63; advanced colorectal adenoma:47; colorectal cancer:46	metaphlan4_species	
+CRC	Gao_2021_CRC	CRC/Gao_2021_CRC	yes	CTR:47; colon adenoma:40; colorectal cancer:39	metaphlan4_species	
+CRC	Hannigan_2018_CRC	CRC/Hannigan_2018_CRC	yes	<blank>:12; CTR:57; adenoma:56; colorectal cancer:56		metaphlan4_species
+CRC	Liu_2022_CRC_China	CRC/Liu_2022_CRC_China	yes	CTR:86; colorectal cancer:79	metaphlan4_species	
+CRC	Thomas_2019_CRC_Italy	CRC/Thomas_2019_CRC_Italy	yes	CTR:52; adenoma:27; colorectal cancer:61	metaphlan4_species	
+CRC	Vogtmann_2016_CRC_USA	CRC/Vogtmann_2016_CRC_USA	yes	<blank>:6; CTR:52; colorectal cancer:52	metaphlan4_species	
+CRC	Wirbel_2019_CRC_Germany	CRC/Wirbel_2019_CRC_Germany	yes	CTR:60; colorectal cancer:60	metaphlan4_species	
+CRC	Yachida_2019_CRC	CRC/Yachida_2019_CRC	yes	<blank>:2; CTR:251; colorectal cancer:285; control patient:40; nonadvanced colorectal adenoma:67	metaphlan4_species	
+CRC	Yu_2017_CRC_China	CRC/Yu_2017_CRC_China	yes	CTR:54; colorectal cancer:74	metaphlan4_species	
+CRC	Zeller_2014_CRC_France	CRC/Zeller_2014_CRC_France	yes	CTR:105; advanced colorectal adenoma:15; colorectal cancer:78	metaphlan4_species	
+IBD	Ananthakrishnan_2017_IBD	IBD/Ananthakrishnan_2017_IBD	yes	Crohn's disease:88; ulcerative colitis:86		metaphlan4_species
+IBD	Braun_2024_Crohn	IBD/Braun_2024_Crohn	yes	CTR:21; Crohn's disease:17	metaphlan4_species	
+IBD	Bushman_2020_pediatric_Cdiff_IBD	IBD/Bushman_2020_pediatric_Cdiff_IBD	yes	COHORT:7; CTR:48; Clostridium difficile infection:14; inflammatory bowel disease:79	metaphlan4_species	
+IBD	Chen_2023_uc_FMT_capsule	IBD/Chen_2023_uc_FMT_capsule	yes	CTR:8; ulcerative colitis:75	metaphlan4_species	
+IBD	Damman_2015_FMT_UC	IBD/Damman_2015_FMT_UC	yes	CTR:11; ulcerative colitis:30	metaphlan4_species	
+IBD	Douglas_2018_child_Crohn	IBD/Douglas_2018_child_Crohn	yes	CTR:20; Crohn's disease:20	metaphlan4_species	
+IBD	Franzosa_2018_IBD	IBD/Franzosa_2018_IBD	yes	CTR:56; Crohn's disease:88; ulcerative colitis:76	metaphlan4_species	
+IBD	Gevers_2014_Crohn_child	IBD/Gevers_2014_Crohn_child	yes	Crohn's disease:31; control patient:8; indeterminate colitis:1; ulcerative colitis:3	metaphlan4_species	
+IBD	Hall_2017_IBD	IBD/Hall_2017_IBD	yes	CTR:74; Crohn's disease:89; indeterminate colitis:12; ulcerative colitis:87	metaphlan4_species	
+IBD	He_2017_Crohn	IBD/He_2017_Crohn	yes	<blank>:6; CTR:54; Crohn's disease:63	metaphlan4_species	
+IBD	Kumbhari_2024_IBD	IBD/Kumbhari_2024_IBD	yes	CTR:160; Crohn's disease:471; indeterminate colitis:15; ulcerative colitis:314	metaphlan4_species	
+IBD	Lee_2017_FMT_UC	IBD/Lee_2017_FMT_UC	yes	CTR:4; ulcerative colitis:6	metaphlan4_species	
+IBD	Lee_2021_IBD	IBD/Lee_2021_IBD	yes	Crohn's disease:65; ulcerative colitis:49	metaphlan4_species	
+IBD	Lima_2021_FMT_UC	IBD/Lima_2021_FMT_UC	yes	COHORT:59	metaphlan4_species	
+IBD	Lloyd-Price_2019_HMP2IBD	IBD/Lloyd-Price_2019_HMP2IBD	yes	Crohn's disease:591; control patient:358; ulcerative colitis:367	metaphlan4_species	
+IBD	Nusbaum_2018_FMT_UC_children	IBD/Nusbaum_2018_FMT_UC_children	yes	CTR:4; ulcerative colitis:8	metaphlan4_species	
+IBD	Podlesny_2022_FMT_UC	IBD/Podlesny_2022_FMT_UC	yes	<blank>:59; ulcerative colitis:101	metaphlan4_species	
+IBD	Schirmer_2024_UC	IBD/Schirmer_2024_UC	yes	ulcerative colitis:241	metaphlan4_species	
+IBD	Schmidt_2022_FMT_UC_CDI	IBD/Schmidt_2022_FMT_UC_CDI	yes	CTR:2; Clostridium difficile infection:10; ulcerative colitis:14	metaphlan4_species	
+IBD	SerranoGomez_2021_IBD	IBD/SerranoGomez_2021_IBD	yes	Crohn's disease:98		metaphlan4_species
+IBD	Smith_2022_FMT_UC	IBD/Smith_2022_FMT_UC	yes	<blank>:42; ulcerative colitis:117	metaphlan4_species	
+IBD	Tian_2024_IBD	IBD/Tian_2024_IBD	yes	CTR:68; inflammatory bowel disease:71		metaphlan4_species
+IBD	Vaughn_2016_FMT_Crohn	IBD/Vaughn_2016_FMT_Crohn	yes	CTR:4; Crohn's disease:49	metaphlan4_species	
+IBD	Yadav_2024_ulcerative_colitis_India	IBD/Yadav_2024_ulcerative_colitis_India	yes	CTR:14; ulcerative colitis:27		metaphlan4_species
+IBS	Goll_2020_FMT_IBS	IBS/Goll_2020_FMT_IBS	yes	<blank>:17; irritable bowel syndrome:76	metaphlan4_species	
+IBS	Mars_2020_IBS	IBS/Mars_2020_IBS	yes	<blank>:5; CTR:152; irritable bowel syndrome:324	metaphlan4_species	
+IBS	PRJNA788943_IBS	IBS/PRJNA788943_IBS	yes	irritable bowel syndrome:56		metaphlan4_species

@@ -1,0 +1,4 @@
+source_study	rows_total	species_total	eligible_source_pass_species	up_rows	down_rows	median_abs_log2fc
+Goll_2020_FMT_IBS	578	578	225	480	98	10.839699066228437
+Mars_2020_IBS	465	465	81	275	190	1.147499969407865
+PRJEB34103_IBS	68	68	61	46	22	0.7441

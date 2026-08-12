@@ -1,0 +1,8 @@
+diseases	n_diseases	species_count
+CRC/CRA|IBD|IBS	3	23
+CRC/CRA|IBD	2	95
+CRC/CRA|IBS	2	49
+IBD|IBS	2	38
+CRC/CRA	1	366
+IBD	1	144
+IBS	1	128

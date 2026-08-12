@@ -1,0 +1,11 @@
+diseases	shared_species	same_direction_species	mixed_direction_species	named_species
+CRA|CRC	42	34	8	19
+CRC|IBD	41	34	7	28
+IBD|IBS	38	10	28	13
+CRA|IBD	35	11	24	26
+CRC|IBS	22	17	5	16
+CRA|IBS	21	4	17	13
+CRA|CRC|IBD	19	8	11	12
+CRC|IBD|IBS	15	5	10	9
+CRA|IBD|IBS	8	0	8	4
+CRA|CRC|IBS	6	2	4	5

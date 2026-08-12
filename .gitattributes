@@ -1,0 +1,2 @@
+analyses/figure1_ml/**/*.tsv text eol=lf whitespace=-blank-at-eol
+analyses/figure1_ml/**/*.gz binary
