@@ -34,10 +34,6 @@
 # Keep small publication templates
 !metadata/example_sample_metadata.tsv
 
-# Keep the Figure 1 ML reproducibility tables. Generated figures remain
-# ignored by the global image rules below.
-!analyses/figure1_ml/**/*.tsv
-
 # Keep the frozen Figure 1 cohort species tables and sample group files.
 !Figure1_cohort_species_public/**/*.tsv
 

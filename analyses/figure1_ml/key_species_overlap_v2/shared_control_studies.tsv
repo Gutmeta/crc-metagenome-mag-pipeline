@@ -1,6 +1,0 @@
-study_code	disease_arms	cra_case_samples	crc_case_samples	control_samples_reused_within_study	note
-Feng_2015_CRC_Austria	CRA,CRC	47	46	63	CRA and CRC arms are from the same Metalog study; sensitivity analyses remove shared studies and CRC keys can be restricted to CRC-only studies.
-Gao_2021_CRC	CRA,CRC	40	39	47	CRA and CRC arms are from the same Metalog study; sensitivity analyses remove shared studies and CRC keys can be restricted to CRC-only studies.
-Thomas_2019_CRC_Italy	CRA,CRC	27	61	52	CRA and CRC arms are from the same Metalog study; sensitivity analyses remove shared studies and CRC keys can be restricted to CRC-only studies.
-Yachida_2019_CRC	CRA,CRC	67	285	289	CRA and CRC arms are from the same Metalog study; sensitivity analyses remove shared studies and CRC keys can be restricted to CRC-only studies.
-Zeller_2014_CRC_France	CRA,CRC	15	65	99	CRA and CRC arms are from the same Metalog study; sensitivity analyses remove shared studies and CRC keys can be restricted to CRC-only studies.

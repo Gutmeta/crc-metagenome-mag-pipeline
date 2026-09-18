@@ -1,2 +1,2 @@
-analyses/figure1_ml/**/*.tsv text eol=lf whitespace=-blank-at-eol
-analyses/figure1_ml/**/*.gz binary
+Figure1_cohort_species_public/**/*.tsv text eol=lf whitespace=-blank-at-eol
+Figure1_cohort_species_public/**/*.gz binary

@@ -16,13 +16,12 @@ crc-metagenome-mag-pipeline/
 ├── README.md
 ├── LICENSE
 ├── environment.yml
+├── Figure1_cohort_species_public/
+│   └── frozen cohort profiles, minimal group labels, and manifests
 ├── config/
 │   └── example_config.yaml
 ├── metadata/
 │   └── example_sample_metadata.tsv
-├── analyses/
-│   └── figure1_ml/
-│       └── de-identified inputs, analysis code, and reference tables
 ├── scripts/
 │   ├── 01_... to 42_...
 │   └── plotting/
@@ -46,24 +45,25 @@ crc-metagenome-mag-pipeline/
   and functional evidence.
 - A Conda environment specification for the shared Python, R, and command-line
   dependencies.
-- A self-contained [Figure 1 ML reproducibility package](analyses/figure1_ml/README.md)
-  with minimized pseudonymized inputs, aggregate reference tables, provenance,
-  and integrity checks.
+- A frozen [Figure 1 cohort species companion dataset](Figure1_cohort_species_public/README.md)
+  with pseudonymized analysis-eligible profiles, minimal group labels,
+  provenance manifests, and integrity checks.
 
 ## Data Availability and Repository Scope
 
 This repository distributes source code, configuration templates, a synthetic
-plotting-data generator, and a Figure 1 ML reproducibility package containing
-minimized pseudonymized metadata and species-level relative-abundance inputs
-required for its documented offline analyses.
+plotting-data generator, and a frozen Figure 1 companion dataset containing
+pseudonymized analysis-eligible species-level relative-abundance profiles and
+minimal group labels.
 
 - Study inputs should be obtained through the repositories, accession records,
   and data-access routes reported in the accompanying manuscript unless they
-  are explicitly inventoried under `analyses/figure1_ml/`.
-- The Figure 1 ML inputs use release-only pseudonyms and exclude source sample
-  identifiers, coordinates, dates, free-text descriptions, medication fields,
-  and identifier crosswalks. Their residual linkage risk and license terms are
-  documented within that package.
+  are explicitly inventoried in
+  `Figure1_cohort_species_public/COHORT_TABLES.tsv`.
+- The Figure 1 cohort species inputs use release-only pseudonyms and exclude
+  source sample identifiers, coordinates, dates, free-text descriptions,
+  medication fields, and identifier crosswalks. Their scope and residual
+  linkage considerations are documented within that package.
 - GTDB, host-filtering, and other reference databases must be downloaded from
   their respective providers under the applicable terms.
 - Raw sequencing data, large intermediate files, trained-model outputs, and
