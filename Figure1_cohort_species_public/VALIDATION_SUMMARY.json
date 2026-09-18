@@ -1,0 +1,12 @@
+{
+  "cohorts": 20,
+  "released_profile_samples": 6264,
+  "released_profile_rows": 934240,
+  "original_profile_samples": 6303,
+  "final_auc_rows_matched": 24,
+  "final_species_memberships_matched": 681,
+  "final_background_memberships_matched": 3635,
+  "source_profile_values_matched": true,
+  "identifier_crosswalk_written": false,
+  "lock_utc": "2026-09-18T09:10:06.430292+00:00"
+}
