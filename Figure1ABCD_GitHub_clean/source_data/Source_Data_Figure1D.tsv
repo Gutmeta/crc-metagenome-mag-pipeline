@@ -1,0 +1,10 @@
+row_set	column_set	shared_species
+CRC/CRA	CRC/CRA	300
+CRC/CRA	IBD	66
+CRC/CRA	IBS (Mars_2020)	18
+IBD	CRC/CRA	66
+IBD	IBD	300
+IBD	IBS (Mars_2020)	25
+IBS (Mars_2020)	CRC/CRA	18
+IBS (Mars_2020)	IBD	25
+IBS (Mars_2020)	IBS (Mars_2020)	81

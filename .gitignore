@@ -34,8 +34,13 @@
 # Keep small publication templates
 !metadata/example_sample_metadata.tsv
 
-# Keep the frozen Figure 1 cohort species tables and sample group files.
-!Figure1_cohort_species_public/**/*.tsv
+# Keep the distributed Figure 1A-D tables, statistics, and reference figures.
+# The package's own .gitignore excludes regenerated outputs and caches.
+!Figure1ABCD_GitHub_clean/**/*.tsv
+!Figure1ABCD_GitHub_clean/analysis/**/*.npz
+!Figure1ABCD_GitHub_clean/figures/*.pdf
+!Figure1ABCD_GitHub_clean/figures/*.png
+!Figure1ABCD_GitHub_clean/figures/*.svg
 
 # Logs, jobs, and temporary output
 *.log

@@ -1,2 +1,10 @@
-Figure1_cohort_species_public/**/*.tsv text eol=lf whitespace=-blank-at-eol
-Figure1_cohort_species_public/**/*.gz binary
+# Preserve the byte checksums recorded in the Figure 1 release manifest.
+Figure1ABCD_GitHub_clean/** -text
+Figure1ABCD_GitHub_clean/**/*.tsv whitespace=-blank-at-eol
+# Keep whitespace emitted by the reference SVG exporter unchanged.
+Figure1ABCD_GitHub_clean/figures/*.svg whitespace=-blank-at-eol
+Figure1ABCD_GitHub_clean/**/*.zip binary
+Figure1ABCD_GitHub_clean/**/*.npz binary
+Figure1ABCD_GitHub_clean/**/*.xlsx binary
+Figure1ABCD_GitHub_clean/**/*.pdf binary
+Figure1ABCD_GitHub_clean/**/*.png binary

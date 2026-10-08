@@ -16,8 +16,8 @@ crc-metagenome-mag-pipeline/
 ├── README.md
 ├── LICENSE
 ├── environment.yml
-├── Figure1_cohort_species_public/
-│   └── frozen cohort profiles, minimal group labels, and manifests
+├── Figure1ABCD_GitHub_clean/
+│   └── Figure 1A–D inputs, code, figures, source data, and cohort archive
 ├── config/
 │   └── example_config.yaml
 ├── metadata/
@@ -45,29 +45,39 @@ crc-metagenome-mag-pipeline/
   and functional evidence.
 - A Conda environment specification for the shared Python, R, and command-line
   dependencies.
-- A frozen [Figure 1 cohort species companion dataset](Figure1_cohort_species_public/README.md)
-  with pseudonymized analysis-eligible profiles, minimal group labels,
-  provenance manifests, and integrity checks.
+- A [Figure 1A–D analysis and public-data package](Figure1ABCD_GitHub_clean/README.md)
+  with figure-level inputs, reproduction code, reference figures and source
+  tables, IBS selection evidence, and a companion archive of 20 cohort
+  species profiles and minimal comparison labels.
 
 ## Data Availability and Repository Scope
 
 This repository distributes source code, configuration templates, a synthetic
-plotting-data generator, and a frozen Figure 1 companion dataset containing
-pseudonymized analysis-eligible species-level relative-abundance profiles and
-minimal group labels.
+plotting-data generator, and a Figure 1A–D package containing figure-level
+inputs, analysis code, reference outputs, and a companion archive of
+pseudonymized analysis-eligible species profiles and minimal group labels.
 
 - Study inputs should be obtained through the repositories, accession records,
   and data-access routes reported in the accompanying manuscript unless they
-  are explicitly inventoried in
-  `Figure1_cohort_species_public/COHORT_TABLES.tsv`.
+  are explicitly included in `Figure1ABCD_GitHub_clean/`. The 20 cohort
+  profiles and comparison labels are distributed in its
+  `Figure1_cohort_species_public.zip`; the enclosed `COHORT_TABLES.tsv`
+  records their provenance. Extract this companion archive outside the
+  Figure 1 package to preserve its distributed-file manifest.
 - The Figure 1 cohort species inputs use release-only pseudonyms and exclude
   source sample identifiers, coordinates, dates, free-text descriptions,
   medication fields, and identifier crosswalks. Their scope and residual
-  linkage considerations are documented within that package.
+  linkage considerations are documented in the
+  [data availability statement](Figure1ABCD_GitHub_clean/docs/Data_availability.md).
+- The Figure 1 package reproduces figure-level calculations from aggregate
+  AUCs and selected-species tables. Individual predictions, model-training
+  code, and initial species-screening code are outside its scope.
 - GTDB, host-filtering, and other reference databases must be downloaded from
   their respective providers under the applicable terms.
 - Raw sequencing data, large intermediate files, trained-model outputs, and
-  generated figures should be stored outside the Git repository.
+  newly generated figures should be stored outside the Git repository or in
+  ignored output directories. The distributed Figure 1 reference figures,
+  source tables, and supporting statistics are intentionally versioned.
 - Filesystem locations are expressed as `/path/to/...` placeholders and must be
   configured for the user's compute environment.
 
@@ -123,6 +133,10 @@ adapted to the target compute environment.
 
 ## Reproducibility
 
+- The [Figure 1A–D package](Figure1ABCD_GitHub_clean/README.md) has its own
+  pinned `requirements.txt`, reproduction instructions, and validation script.
+  Run commands from that package directory; its release manifest covers the
+  package contents rather than the surrounding MAG pipeline repository.
 - `environment.yml` records the shared Python, R, and command-line dependencies.
 - The numbered scripts correspond to the principal analytical stages described
   in the manuscript; dataset-specific variants use the same documented workflow
